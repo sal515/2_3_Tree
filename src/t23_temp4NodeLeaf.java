@@ -1,4 +1,4 @@
-public class temp4NodeLeaf extends threeNodeLeaf {
+public class t23_temp4NodeLeaf extends threeNodeLeaf {
 
     // int nodeIndex
     // int key1
