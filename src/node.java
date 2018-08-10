@@ -66,9 +66,14 @@ public abstract class node {
 
     // ======================  member functions ===================================
 
+    public boolean isRoot(node nodeObj) {
+        if (nodeObj.getParent() == null) return true;
+        else return false;
+    }
+
 
     static node initializeNode(node outNode, node parent, node rightChild, node leftChild,
-                        node middleChild, int key1, int key2) {
+                               node middleChild, int key1, int key2) {
 
         // available options:
         // ------------------
@@ -140,7 +145,6 @@ public abstract class node {
 //            outNode.setKey1(key1);
 //            return outNode;
 //        }
-
 
 
 //        switch (nodeType) {

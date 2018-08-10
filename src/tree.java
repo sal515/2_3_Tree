@@ -11,18 +11,25 @@ abstract class tree {
 
     private stack stackObj = null;
 
-    private boolean isKey2 = false;     // only used for find method
+    private boolean isKey2Find = false;     // only used for find method
 
-    private boolean found = false;     // only used for addFindHelp method
 
-    private node addfindHelpReturnObj = null; // only used for addFindHelp method
+    // eg. of a 3node
+    // keys are:                10 20
+    // target locations are :  0  1  2
+    // target location can be int from 0 to 2 depending on the location
+    private int targetLocation3Node = 0;     // only used for addfindhelp method
+
+//    private boolean found = false;     // only used for addFindHelp method
+
+//    private node addfindHelpReturnObj = null; // only used for addFindHelp method
     // ====================== Member variables ===================================
 
     tree() {
         root = null;
         treeSize = 0;
         stackObj = null;
-        isKey2 = false;
+        isKey2Find = false;
     }
 
     // ====================== abstract member functions ===================================
@@ -41,7 +48,7 @@ abstract class tree {
 
     abstract node remove(int val);
 
-    abstract void traverse();
+//    abstract void traverse();
 
     abstract void traverse(node rt);
 
@@ -73,12 +80,12 @@ abstract class tree {
         return stackObj;
     }
 
-    public boolean isKey2() {
-        return isKey2;
+    public boolean isKey2Find() {
+        return isKey2Find;
     }
 
-    public void setisKey2(boolean key2) {
-        isKey2 = key2;
+    public void setisKey2Find(boolean key2) {
+        isKey2Find = key2;
     }
 
     public static int getComparisons() {
@@ -93,21 +100,23 @@ abstract class tree {
         tree.setComparisons(tree.getComparisons() + number);
     }
 
-    public boolean isFound() {
-        return found;
-    }
 
-    public void setFound(boolean found) {
-        this.found = found;
-    }
 
-    public node getAddfindHelpReturnObj() {
-        return addfindHelpReturnObj;
-    }
+    //    public boolean isFound() {
+//        return found;
+//    }
 
-    public void setAddfindHelpReturnObj(node addfindHelpReturnObj) {
-        this.addfindHelpReturnObj = addfindHelpReturnObj;
-    }
+//    public void setFound(boolean found) {
+//        this.found = found;
+//    }
+
+//    public node getAddfindHelpReturnObj() {
+//        return addfindHelpReturnObj;
+//    }
+
+//    public void setAddfindHelpReturnObj(node addfindHelpReturnObj) {
+//        this.addfindHelpReturnObj = addfindHelpReturnObj;
+//    }
 
     // ====================== getters and setters ===================================
 

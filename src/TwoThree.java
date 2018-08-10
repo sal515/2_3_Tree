@@ -20,16 +20,20 @@ class TwoThree {
 
 // testing with manual tree made by me -- from the assignment provided example
         tree treeObj;
-//        treeObj = testTreeStep6();
-        treeObj = testTreeStep7();
-
-// testing add - find helper function
-        node addFindHelperNode = treeObj.addFindHelp(900, treeObj.getRoot());
-        System.out.println(treeObj.isFound());
+        treeObj = testTreeStep6();
+//        treeObj = testTreeStep7();
 
 
+// testing add function
+        int findVal = 501;
+        treeObj.addHelp(10, treeObj.getRoot());
 
 
+
+
+// testing add - find helper function - target node locator
+//        node addFindHelperNode = treeObj.addFindHelp(findVal, treeObj.getRoot());
+//        checkAddFindHelper(treeObj, addFindHelperNode);
 
 
 // testing how to initialize nodes easily
@@ -39,21 +43,13 @@ class TwoThree {
 //                new t23_2Node_Leaf(), new t23_2Node_Leaf(), 280, 529);
 
 
-
-
-
 // testing how to recognize the value found
 //        int testFinkKey = 900;
 //        testhandleFind(treeObj, testFinkKey);
 //        handleFind(testFinkKey, treeObj);
 
 
-
 // random checks - to learn theory - unrelated to assignment
-//        inheritanceCheck();
-//        boolean a = operationsQueueObj instanceof operationsQueue;
-//        Class cls = operationsQueueObj.getClass();
-//        System.out.println(cls);
 
 //        testClass.charExtractor("test.txt", operationsQueueObj);
 //        testClass.charExtractor("Operations.txt");
@@ -61,7 +57,24 @@ class TwoThree {
 
 
         int unnecessary = 9999;
-        System.out.println("ignore: " + unnecessary);
+//        System.out.println("ignore: " + unnecessary);
+
+    }
+
+    private static void checkAddFindHelper(tree treeObj, node addFindHelperNode) {
+        if (!(addFindHelperNode == null)) {
+            if (addFindHelperNode.is3node()) {
+                System.out.println("Target Node with key1: " + addFindHelperNode.getKey1() + " key2 " +
+                        addFindHelperNode.getKey2() + " comparisons : " + treeObj.getComparisons());
+                System.out.println("3 node: " + addFindHelperNode.is3node());
+            } else {
+                System.out.println("Target Node with key: " + addFindHelperNode.getKey1() +
+                        " comparisons : " + treeObj.getComparisons());
+                System.out.println("3 node: " + addFindHelperNode.is3node());
+            }
+        } else System.out.println("key was found and Comaparisons: "
+                + treeObj.getComparisons() + " null: " + (addFindHelperNode == null));
+
 
     }
 
@@ -70,9 +83,9 @@ class TwoThree {
         if (treeObj.isEmpty(treeObj.getRoot())) System.out.println("empty root");
 //        if (temp == null) System.out.println("empty root");
         else if (temp.is3node()) {
-            if (temp != null && treeObj.isKey2())
+            if (temp != null && treeObj.isKey2Find())
                 System.out.println("Found key2: " + temp.getKey2() + " comparisons : " + treeObj.getComparisons());
-            else if (temp != null && !treeObj.isKey2())
+            else if (temp != null && !treeObj.isKey2Find())
                 System.out.println("Found key1: " + temp.getKey1() + " comparisons : " + treeObj.getComparisons());
             else System.out.println("not found");
         } else {
@@ -134,7 +147,6 @@ class TwoThree {
         testTree.getRoot().getRightChild().getRightChild().setKey1(900);
         testTree.getRoot().getRightChild().getRightChild().setParent(testTree.getRoot().getRightChild());
 
-
         return testTree;
     }
 
@@ -162,46 +174,5 @@ class TwoThree {
         return testTree;
 
     }
-
-
-    private static void inheritanceCheck() {
-        System.out.println("----------------------------------------");
-        Cat a = new Dog();
-        Animal b = a;
-        a.makeSound();
-        b.makeSound();
-//        ((Dog)a).makeSound();
-        ((Cat) a).makeSound();
-        System.out.println("----------------------------------------");
-
-        System.out.println("int----------------------------------------");
-        CatINT aINT = new DogINT();
-        AnimalINT bINT = aINT;
-        aINT.makeSound();
-        bINT.makeSound();
-//        ((Dog)a).makeSound();
-        ((CatINT) aINT).makeSound();
-        System.out.println("----------------------------------------");
-
-        System.out.println("abs----------------------------------------");
-        Catabs aabs = new Dogabs();
-        Animalabs babs = aabs;
-        aabs.makeSound();
-        babs.makeSound();
-//        ((Dog)a).makeSound();
-        ((Catabs) aabs).makeSound();
-        System.out.println("----------------------------------------");
-
-
-//        System.out.println("----------------------------------------");
-//        node nodeObj;
-//        nodeObj = new t23_2Node_Leaf();
-//        nodeObj.setNodeIndex(5555);
-//        System.out.println(nodeObj.getNodeIndex());
-//        System.out.println("----------------------------------------");
-
-
-    }
-
 
 }

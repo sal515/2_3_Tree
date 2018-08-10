@@ -10,11 +10,11 @@ public class t23Tree extends tree {
 
     // ====================== Member functions ===================================
 
+    // returns null if insert value is found
     @Override
     node addFindHelp(int val, node rt) {
         node addfindHelpReturnObj;
-        // in general - checkKey1 < checkKey2
-        // storing the temp variables
+
         int checkKey1 = rt.getKey1();
         int checkKey2 = -1;
         if (rt.is3node()) checkKey2 = rt.getKey2();
@@ -27,10 +27,10 @@ public class t23Tree extends tree {
             if (val < checkKey1) {
                 comparisonsIncrement(1);
                 if (rt.isLeaf()) {
-                    setFound(false);
-                    return (addfindHelpReturnObj = rt);
+//                    setFound(false);
+                    return rt;
                 } else {
-                    return find(val, rt.getLeftChild());
+                    return addFindHelp(val, rt.getLeftChild());
                 }
                 // going right of key1 - if insertKey greater then key1
             } else if (val > checkKey1) {
@@ -39,36 +39,36 @@ public class t23Tree extends tree {
                 if (val < checkKey2) {
                     comparisonsIncrement(1);
                     if (rt.isLeaf()) {
-                        setFound(false);
-                        return (addfindHelpReturnObj = rt);
+//                        setFound(false);
+                        return rt;
                     } else {
-                        return find(val, rt.getMiddleChild());
+                        return addFindHelp(val, rt.getMiddleChild());
                     }
                 }
                 // going right of key2 - if insertKey greater then key2
                 else if (val > checkKey2) {
                     comparisonsIncrement(2);
                     if (rt.isLeaf()) {
-                        setFound(false);
-                        return (addfindHelpReturnObj = rt);
+//                        setFound(false);
+                        return rt;
                     } else {
-                        return find(val, rt.getRightChild());
+                        return addFindHelp(val, rt.getRightChild());
                     }
                 }
                 // key is the key2 of 3 node
                 else {
-                    setFound(true);
+//                    setFound(true);
                     comparisonsIncrement(2);
-                    setisKey2(true);
-                    return rt;
+                    setisKey2Find(true);
+                    return null;
                 }
             }
             // key is the key1 of 3 node
             else {
-                setFound(true);
+//                setFound(true);
                 comparisonsIncrement(2);
-                setisKey2(false);
-                return rt;
+                setisKey2Find(false);
+                return null;
             }
         }
         // if 2-node - do following:
@@ -77,27 +77,27 @@ public class t23Tree extends tree {
             if (val < checkKey1) {
                 comparisonsIncrement(1);
                 if (rt.isLeaf()) {
-                    setFound(false);
-                    return (addfindHelpReturnObj = rt);
+//                    setFound(false);
+                    return rt;
                 } else {
-                    return find(val, rt.getLeftChild());
+                    return addFindHelp(val, rt.getLeftChild());
                 }
                 // going right of key1 - if insertKey greater then key1
             } else if (val > checkKey1) {
                 comparisonsIncrement(2);
                 if (rt.isLeaf()) {
-                    setFound(false);
-                    return (addfindHelpReturnObj = rt);
+//                    setFound(false);
+                    return rt;
                 } else {
-                    return find(val, rt.getRightChild());
+                    return addFindHelp(val, rt.getRightChild());
                 }
             }
             // key is the key1 of 2-node
             else {
-                setFound(true);
+//                setFound(true);
                 comparisonsIncrement(2);
-                setisKey2(false);
-                return rt;
+                setisKey2Find(false);
+                return null;
             }
         }
     }
@@ -105,9 +105,19 @@ public class t23Tree extends tree {
 
     @Override
     boolean addHelp(int val, node rt) {
+        node targetNode = addFindHelp(val, rt);
+        if (targetNode!= null) {
+            if (targetNode.is3node()) {
+                System.out.println(targetNode.getKey1());
+                System.out.println(targetNode.getKey2());
+            } else {
+                System.out.println(targetNode.getKey1());
+            }
+        }
+
+
         return false;
     }
-
 
 
     @Override
@@ -130,11 +140,6 @@ public class t23Tree extends tree {
     @Override
     node remove(int val) {
         return null;
-    }
-
-    @Override
-    void traverse() {
-
     }
 
     @Override
@@ -184,14 +189,14 @@ public class t23Tree extends tree {
                 // key is the key2 of 3 node
                 else {
                     comparisonsIncrement(2);
-                    setisKey2(true);
+                    setisKey2Find(true);
                     return rt;
                 }
             }
             // key is the key1 of 3 node
             else {
                 comparisonsIncrement(2);
-                setisKey2(false);
+                setisKey2Find(false);
                 return rt;
             }
         }
@@ -211,7 +216,7 @@ public class t23Tree extends tree {
             // key is the key1 of 2-node
             else {
                 comparisonsIncrement(2);
-                setisKey2(false);
+                setisKey2Find(false);
                 return rt;
             }
         }
