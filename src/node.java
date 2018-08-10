@@ -2,17 +2,16 @@ public abstract class node {
 
     // ====================== Member variables ===================================
 
-    private int nodeIndex;
     private node parent;
 
     // ====================== Member variables ===================================
 
     node() {
-        setNodeIndex(-1);
         setParent(null);
     }
 
-    // ====================== overridden  functions ===================================
+    // ====================== Undefined overridden  functions ===================================
+    // ====================== Downcasting checks are done maually ===================================
 
     boolean is3node() {
         return false;
@@ -68,6 +67,117 @@ public abstract class node {
     }
 
 
+    public node create2NodeLeaf(int key1, node parent) {
+        node newNode = new t23_2Node_Leaf();
+        newNode.setKey1(key1);
+        newNode.setParent(parent);
+        return newNode;
+    }
+
+
+    public node create2NodeInternal(int key1, node parent,
+                                    node left, node right) {
+        node newNode = new t23_2Node_Internal();
+        newNode.setKey1(key1);
+        newNode.setLeftChild(left);
+        newNode.setRightChild(right);
+        newNode.setParent(parent);
+        return newNode;
+    }
+
+
+    public node create3NodeLeaf(int key1, int key2, node parent) {
+        node newNode = new t23_3Node_Leaf();
+        newNode.setKey1(key1);
+        newNode.setKey2(key2);
+        newNode.setParent(parent);
+        return newNode;
+    }
+
+    public node create3NodeInternal(int key1, int key2, node parent,
+                                    node left, node middle, node right) {
+        node newNode = new t23_3Node_Internal();
+        newNode.setKey1(key1);
+        newNode.setKey2(key2);
+        newNode.setLeftChild(left);
+        newNode.setRightChild(right);
+        newNode.setMiddleChild(middle);
+        newNode.setParent(parent);
+        return newNode;
+    }
+
+
+    public node create4NodeInternal(int key1, int key2, int key3, node parent,
+                                    node left, node middle, node right, node fourthTemp) {
+        node newNode = new t23_temp4NodeInternal();
+        newNode.setKey1(key1);
+        newNode.setKey2(key2);
+        newNode.setKey3(key3);
+        newNode.setLeftChild(left);
+        newNode.setRightChild(right);
+        newNode.setMiddleChild(middle);
+        newNode.setFourthChildTemp(fourthTemp);
+        newNode.setParent(parent);
+        return newNode;
+    }
+
+    public node create4NodeLeaf(int key1, int key2, int key3, node parent) {
+        node newNode = new t23_temp4NodeLeaf();
+        newNode.setKey1(key1);
+        newNode.setKey2(key2);
+        newNode.setKey3(key3);
+        newNode.setParent(parent);
+        return newNode;
+    }
+
+
+    // making 2 node root from null
+    public node build_2NodeRootLeaf(int key) {
+        node newNode = create2NodeLeaf(key, null);
+        return newNode;
+    }
+
+    // making 3 node root from 2 node root
+    public node build_3NodeRootLeaf(int key, int insertKeyPos, node twoNodeRoot) {
+        // if insert key position is 0 , new key goes on left
+        node newNode = null;
+        if (insertKeyPos == 0) {
+            newNode = create3NodeLeaf(key, twoNodeRoot.getKey1(), twoNodeRoot.getParent());
+        }
+        // if insert key position is other than 0, new key goes on the right
+        else newNode = create3NodeLeaf(twoNodeRoot.getKey1(), key, twoNodeRoot.getParent());
+        return newNode;
+    }
+
+
+    // splitting 3 node root to 3x new 2 node
+    public node[] split_3nodeRootLeaf(int key, int insertKeyPos, node threeNodeRoot) {
+        // What the positions mean int the return array
+        int parentPos = 0;
+        int leftChildPos = 1;
+        int rightChildPos = 2;
+
+        node newNodes[] = new node[3];
+        // if insert key position is 0 , new key is left child
+        if (insertKeyPos == 0) {
+            newNodes[parentPos] = create2NodeLeaf(threeNodeRoot.getKey1(), null);
+            newNodes[leftChildPos] = create2NodeLeaf(key, newNodes[0]);
+            newNodes[rightChildPos] = create2NodeLeaf(threeNodeRoot.getKey2(), newNodes[0]);
+        }
+        // if insert key position is 1 , new key is middle child
+        else if (insertKeyPos == 1) {
+            newNodes[parentPos] = create2NodeLeaf(key, null);
+            newNodes[leftChildPos] = create2NodeLeaf(threeNodeRoot.getKey1(), newNodes[0]);
+            newNodes[rightChildPos] = create2NodeLeaf(threeNodeRoot.getKey2(), newNodes[0]);
+        }
+        // if insert key position is 2 or o.w. , new key is right child
+        else {
+            newNodes[parentPos] = create2NodeLeaf(threeNodeRoot.getKey2(), null);
+            newNodes[leftChildPos] = create2NodeLeaf(threeNodeRoot.getKey1(), newNodes[0]);
+            newNodes[rightChildPos] = create2NodeLeaf(key, newNodes[0]);
+        }
+        return newNodes;
+    }
 
 
     // ====================== overridden  functions  ===================================
@@ -83,8 +193,7 @@ public abstract class node {
     // ======================  member functions ===================================
 
     public boolean isRoot(node nodeObj) {
-        if (nodeObj.getParent() == null) return true;
-        else return false;
+        return nodeObj.getParent() == null;
     }
 
 
@@ -204,14 +313,6 @@ public abstract class node {
 
     // ====================== getters and setters ===================================
 
-    public int getNodeIndex() {
-        return nodeIndex;
-    }
-
-
-    public void setNodeIndex(int nodeIndex) {
-        this.nodeIndex = nodeIndex;
-    }
 
     public node getParent() {
         return parent;

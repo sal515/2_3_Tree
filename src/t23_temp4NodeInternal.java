@@ -1,4 +1,4 @@
-public class temp4NodeInternal extends threeNodeInternal {
+public class t23_temp4NodeInternal extends threeNodeInternal {
 
     // int nodeIndex
     // int key1

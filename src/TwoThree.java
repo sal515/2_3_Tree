@@ -62,15 +62,15 @@ class TwoThree {
         if (!(addFindHelperNode == null)) {
             if (addFindHelperNode.is3node()) {
                 System.out.println("Target Node with key1: " + addFindHelperNode.getKey1() + " key2 " +
-                        addFindHelperNode.getKey2() + " comparisons : " + treeObj.getComparisons());
+                        addFindHelperNode.getKey2() + " comparisons : " + tree.getComparisons());
                 System.out.println("3 node: " + addFindHelperNode.is3node());
             } else {
                 System.out.println("Target Node with key: " + addFindHelperNode.getKey1() +
-                        " comparisons : " + treeObj.getComparisons());
+                        " comparisons : " + tree.getComparisons());
                 System.out.println("3 node: " + addFindHelperNode.is3node());
             }
         } else System.out.println("key was found and Comaparisons: "
-                + treeObj.getComparisons() + " null: " + (addFindHelperNode == null));
+                + tree.getComparisons() + " null: " + (addFindHelperNode == null));
 
 
     }
@@ -81,13 +81,13 @@ class TwoThree {
 //        if (temp == null) System.out.println("empty root");
         else if (temp.is3node()) {
             if (temp != null && treeObj.isKey2Find())
-                System.out.println("Found key2: " + temp.getKey2() + " comparisons : " + treeObj.getComparisons());
+                System.out.println("Found key2: " + temp.getKey2() + " comparisons : " + tree.getComparisons());
             else if (temp != null && !treeObj.isKey2Find())
-                System.out.println("Found key1: " + temp.getKey1() + " comparisons : " + treeObj.getComparisons());
+                System.out.println("Found key1: " + temp.getKey1() + " comparisons : " + tree.getComparisons());
             else System.out.println("not found");
         } else {
             if (temp != null) System.out.println("Found key: " +
-                    temp.getKey1() + " comparisons : " + treeObj.getComparisons());
+                    temp.getKey1() + " comparisons : " + tree.getComparisons());
             else System.out.println("not found");
         }
     }
@@ -97,11 +97,11 @@ class TwoThree {
         if (treeObj.isEmpty(treeObj.getRoot())) System.out.println("empty root");
         else if (temp.is3node()) {
             if (temp != null) System.out.println("Found key1: " + temp.getKey1() + " key2 " +
-                    temp.getKey2() + " comparisons : " + treeObj.getComparisons());
+                    temp.getKey2() + " comparisons : " + tree.getComparisons());
             else System.out.println("not found");
         } else {
             if (temp != null) System.out.println("Found key1: " +
-                    temp.getKey1() + " comparisons : " + treeObj.getComparisons());
+                    temp.getKey1() + " comparisons : " + tree.getComparisons());
             else System.out.println("not found");
         }
     }

@@ -187,8 +187,7 @@ public class t23Tree extends tree {
 
     @Override
     boolean isEmpty(node rt) {
-        if (rt == null) return true;
-        else return false;
+        return rt == null;
     }
 
     @Override

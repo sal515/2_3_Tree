@@ -2,17 +2,13 @@
 public class testClass {
 
 
-    public static  void classCheck(Object obj, String Obj2) {
+    public static void classCheck(Object obj, String Obj2) {
 //        if (obj instanceof Obj2){
 //            System.out.println("true");
 //        } else{
 //            System.out.println("testClass.classCheck");
 //        }
     }
-
-
-
-
 
 
     public static void treeOperations(String fileName) {
@@ -25,15 +21,36 @@ public class testClass {
     }
 
 
-/*
-
-    public static treeVisualPrint() {
-    }
-
-*/
-
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 class Animal {
     public void makeSound() {
         System.out.println("Grr...");
@@ -52,7 +69,7 @@ class Dog extends Cat {
 
 
 interface AnimalINT {
-    public void makeSound() ;
+    void makeSound() ;
 //        System.out.println("Grr...");
 //    }
 }
@@ -84,23 +101,7 @@ class Dogabs extends Catabs {
         System.out.println("Woof");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 // function: char extractor -- test codes
