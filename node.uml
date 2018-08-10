@@ -3,80 +3,98 @@
   <ID>JAVA</ID>
   <OriginalElement>tree</OriginalElement>
   <nodes>
-    <node x="407.5" y="0.0">node</node>
-    <node x="300.5" y="609.0">twoNodeInternal</node>
-    <node x="703.5" y="675.0">twoNodeLeaf</node>
-    <node x="417.0" y="986.5">t23_2Node_Internal</node>
-    <node x="23.0" y="986.5">t23_3Node_Internal</node>
-    <node x="601.0" y="986.5">t23_2Node_Leaf</node>
-    <node x="785.0" y="953.0">RedBlack_2node_leaf</node>
-    <node x="0.0" y="543.0">threeNodeInternal</node>
-    <node x="995.0" y="986.5">t23_3Node_Leaf</node>
-    <node x="998.5" y="642.0">threeNodeLeaf</node>
-    <node x="207.0" y="953.0">RedBlack_2Node_internal</node>
+    <node x="537.625" y="609.0">twoNodeInternal</node>
+    <node x="1231.0" y="986.0">temp4NodeLeaf</node>
+    <node x="653.0" y="1008.5">t23_2Node_Internal</node>
+    <node x="259.0" y="1008.5">t23_3Node_Internal</node>
+    <node x="837.0" y="1008.5">t23_2Node_Leaf</node>
+    <node x="1021.0" y="975.0">RedBlack_2node_leaf</node>
+    <node x="126.87499999999989" y="543.0">threeNodeInternal</node>
+    <node x="1408.0" y="1008.5">t23_3Node_Leaf</node>
+    <node x="443.0" y="975.0">RedBlack_2Node_internal</node>
+    <node x="643.5" y="0.0">node</node>
+    <node x="940.625" y="675.0">twoNodeLeaf</node>
+    <node x="0.0" y="953.0">temp4NodeInternal</node>
+    <node x="354.6166496250853" y="648.8950238582141">threeNodeLeaf</node>
   </nodes>
   <notes />
   <edges>
     <edge source="t23_2Node_Leaf" target="twoNodeLeaf">
       <point x="0.0" y="-36.5" />
-      <point x="683.0" y="928.0" />
-      <point x="742.75" y="928.0" />
+      <point x="919.0" y="928.0" />
+      <point x="979.875" y="928.0" />
       <point x="-39.25" y="48.0" />
     </edge>
     <edge source="threeNodeLeaf" target="node">
       <point x="0.0" y="-81.0" />
-      <point x="1077.0" y="513.0" />
-      <point x="738.25" y="513.0" />
+      <point x="1401.375" y="513.0" />
+      <point x="974.25" y="513.0" />
       <point x="141.75" y="246.5" />
     </edge>
     <edge source="t23_3Node_Leaf" target="threeNodeLeaf">
       <point x="0.0" y="-36.5" />
-      <point x="0.0" y="81.0" />
+      <point x="1490.0" y="928.0" />
+      <point x="1440.625" y="928.0" />
+      <point x="39.25" y="81.0" />
     </edge>
     <edge source="t23_2Node_Internal" target="twoNodeInternal">
       <point x="0.0" y="-36.5" />
-      <point x="499.0" y="928.0" />
-      <point x="451.25" y="928.0" />
+      <point x="735.0" y="928.0" />
+      <point x="688.375" y="928.0" />
       <point x="50.25" y="114.0" />
     </edge>
     <edge source="twoNodeInternal" target="node">
       <point x="0.0" y="-114.0" />
-      <point x="401.0" y="523.0" />
-      <point x="549.25" y="523.0" />
+      <point x="638.125" y="523.0" />
+      <point x="785.25" y="523.0" />
       <point x="-47.25" y="246.5" />
     </edge>
     <edge source="threeNodeInternal" target="node">
       <point x="0.0" y="-180.0" />
-      <point x="105.0" y="513.0" />
-      <point x="454.75" y="513.0" />
+      <point x="231.8749999999999" y="513.0" />
+      <point x="690.75" y="513.0" />
       <point x="-141.75" y="246.5" />
+    </edge>
+    <edge source="temp4NodeInternal" target="threeNodeInternal">
+      <point x="0.0" y="-92.0" />
+      <point x="119.5" y="928.0" />
+      <point x="179.3749999999999" y="928.0" />
+      <point x="-52.5" y="180.0" />
     </edge>
     <edge source="t23_3Node_Internal" target="threeNodeInternal">
       <point x="0.0" y="-36.5" />
-      <point x="0.0" y="180.0" />
+      <point x="341.0" y="928.0" />
+      <point x="284.3749999999999" y="928.0" />
+      <point x="52.5" y="180.0" />
     </edge>
     <edge source="twoNodeLeaf" target="node">
       <point x="0.0" y="-48.0" />
-      <point x="782.0" y="523.0" />
-      <point x="643.75" y="523.0" />
+      <point x="1019.125" y="523.0" />
+      <point x="879.75" y="523.0" />
       <point x="47.25" y="246.5" />
     </edge>
     <edge source="RedBlack_2Node_internal" target="twoNodeInternal">
       <point x="0.0" y="-70.0" />
-      <point x="302.0" y="928.0" />
-      <point x="350.75" y="928.0" />
+      <point x="538.0" y="928.0" />
+      <point x="587.875" y="928.0" />
       <point x="-50.25" y="114.0" />
     </edge>
     <edge source="RedBlack_2node_leaf" target="twoNodeLeaf">
       <point x="0.0" y="-70.0" />
-      <point x="880.0" y="928.0" />
-      <point x="821.25" y="928.0" />
+      <point x="1116.0" y="928.0" />
+      <point x="1058.375" y="928.0" />
       <point x="39.25" y="48.0" />
     </edge>
+    <edge source="temp4NodeLeaf" target="threeNodeLeaf">
+      <point x="0.0" y="-59.0" />
+      <point x="1309.5" y="928.0" />
+      <point x="1362.125" y="928.0" />
+      <point x="-39.25" y="81.0" />
+    </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.9152249134948096" x="766.6918714555766" y="568.3553875236296" />
+  <settings layout="Hierarchic Group" zoom="1.0152249134948097" x="695.1522079654685" y="811.0187457396046" />
   <SelectedNodes>
-    <node>node</node>
+    <node>threeNodeLeaf</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>

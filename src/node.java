@@ -53,6 +53,22 @@ public abstract class node {
     public void setMiddleChild(node middleChild) {
     }
 
+    public node getFourthChildTemp() {
+        return null;
+    }
+
+    public void setFourthChildTemp(node fourthChildTemp) {
+    }
+
+    public int getKey3() {
+        return -99;
+    }
+
+    public void setKey3(int key3) {
+    }
+
+
+
 
     // ====================== overridden  functions  ===================================
 
