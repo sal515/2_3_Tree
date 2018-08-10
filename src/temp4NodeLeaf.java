@@ -1,5 +1,12 @@
 public class temp4NodeLeaf extends threeNodeLeaf {
 
+    // int nodeIndex
+    // int key1
+    // int key2
+    // int key3
+    // node parent
+
+
     int key3;
 
     @Override

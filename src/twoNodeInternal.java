@@ -1,6 +1,12 @@
 abstract class twoNodeInternal extends node{
     // ====================== Member variables ===================================
 
+    // int nodeIndex
+    // int key1
+    // node leftChild
+    // node rightChild
+    // node parent
+
     private int key1 = 0;
     private node rightChild = null;
     private node leftChild = null;

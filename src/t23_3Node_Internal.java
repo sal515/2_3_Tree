@@ -3,6 +3,7 @@ public class t23_3Node_Internal extends threeNodeInternal {
 
     // int nodeIndex
     // int key1
+    // int key2
     // node leftChild
     // node rightChild
     // node MiddleChild

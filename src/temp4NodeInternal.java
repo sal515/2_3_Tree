@@ -1,4 +1,15 @@
 public class temp4NodeInternal extends threeNodeInternal {
+
+    // int nodeIndex
+    // int key1
+    // int key2
+    // int key3
+    // node leftChild
+    // node rightChild
+    // node MiddleChild
+    // node fourthChild
+    // node parent
+
     node fourthChildTemp;
     int key3;
 

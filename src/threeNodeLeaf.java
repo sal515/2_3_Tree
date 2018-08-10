@@ -1,6 +1,12 @@
 abstract class threeNodeLeaf extends node {
     // ====================== Member variables ===================================
 
+    // int nodeIndex
+    // int key1
+    // int key2
+    // node parent
+
+
     //    int[] key = new int[2];
     private int key1 = 0;
     private int key2 = 0;

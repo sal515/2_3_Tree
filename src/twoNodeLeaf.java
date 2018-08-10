@@ -1,6 +1,10 @@
 abstract class twoNodeLeaf extends node {
 
     // ====================== Member variables ===================================
+    // int nodeIndex
+    // int key1
+    // node parent
+
 
     private int key1 = 0;
 
