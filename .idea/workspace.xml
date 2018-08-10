@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4d3f59da-3872-4924-9667-84bb6f9e8a78" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node.uml" beforeDir="false" afterPath="$PROJECT_DIR$/node.uml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TwoThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwoThree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/t23Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/t23Tree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree.java" afterDir="false" />
     </list>
@@ -38,7 +38,7 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="node.uml" pinned="false" current-in-tab="false">
+            <file leaf-file-name="node.uml" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/node.uml">
                 <provider selected="true" editor-type-id="UmlEditorProvider">
                   <state>
@@ -46,30 +46,30 @@
                     <OriginalElement>tree</OriginalElement>
                     <nodes>
                       <node x="290.375" y="0.0">node</node>
-                      <node x="888.75" y="587.0">twoNodeInternal</node>
-                      <node x="503.75" y="653.0">twoNodeLeaf</node>
-                      <node x="1014.5" y="964.5">t23_2Node_Internal</node>
-                      <node x="23.0" y="964.5">t23_3Node_Internal</node>
-                      <node x="410.5" y="964.5">t23_2Node_Leaf</node>
-                      <node x="594.5" y="931.0">RedBlack_2node_leaf</node>
-                      <node x="0.0" y="521.0">threeNodeInternal</node>
-                      <node x="226.5" y="964.5">t23_3Node_Leaf</node>
-                      <node x="230.0" y="620.0">threeNodeLeaf</node>
-                      <node x="804.5" y="931.0">RedBlack_2Node_internal</node>
+                      <node x="888.75" y="609.0">twoNodeInternal</node>
+                      <node x="503.75" y="675.0">twoNodeLeaf</node>
+                      <node x="1014.5" y="986.5">t23_2Node_Internal</node>
+                      <node x="23.0" y="986.5">t23_3Node_Internal</node>
+                      <node x="410.5" y="986.5">t23_2Node_Leaf</node>
+                      <node x="594.5" y="953.0">RedBlack_2node_leaf</node>
+                      <node x="0.0" y="543.0">threeNodeInternal</node>
+                      <node x="226.5" y="986.5">t23_3Node_Leaf</node>
+                      <node x="230.0" y="642.0">threeNodeLeaf</node>
+                      <node x="804.5" y="953.0">RedBlack_2Node_internal</node>
                     </nodes>
                     <notes />
                     <edges>
                       <edge source="t23_2Node_Leaf" target="twoNodeLeaf">
                         <point x="0.0" y="-36.5" />
-                        <point x="492.5" y="906.0" />
-                        <point x="543.0" y="906.0" />
+                        <point x="492.5" y="928.0" />
+                        <point x="543.0" y="928.0" />
                         <point x="-39.25" y="48.0" />
                       </edge>
                       <edge source="threeNodeLeaf" target="node">
                         <point x="0.0" y="-81.0" />
-                        <point x="308.5" y="501.0" />
-                        <point x="432.125" y="501.0" />
-                        <point x="-47.25" y="235.5" />
+                        <point x="308.5" y="523.0" />
+                        <point x="432.125" y="523.0" />
+                        <point x="-47.25" y="246.5" />
                       </edge>
                       <edge source="t23_3Node_Leaf" target="threeNodeLeaf">
                         <point x="0.0" y="-36.5" />
@@ -77,21 +77,21 @@
                       </edge>
                       <edge source="t23_2Node_Internal" target="twoNodeInternal">
                         <point x="0.0" y="-36.5" />
-                        <point x="1096.5" y="906.0" />
-                        <point x="1039.5" y="906.0" />
+                        <point x="1096.5" y="928.0" />
+                        <point x="1039.5" y="928.0" />
                         <point x="50.25" y="114.0" />
                       </edge>
                       <edge source="twoNodeInternal" target="node">
                         <point x="0.0" y="-114.0" />
-                        <point x="989.25" y="501.0" />
-                        <point x="621.125" y="501.0" />
-                        <point x="141.75" y="235.5" />
+                        <point x="989.25" y="523.0" />
+                        <point x="621.125" y="523.0" />
+                        <point x="141.75" y="246.5" />
                       </edge>
                       <edge source="threeNodeInternal" target="node">
                         <point x="0.0" y="-180.0" />
-                        <point x="105.0" y="491.0" />
-                        <point x="337.625" y="491.0" />
-                        <point x="-141.75" y="235.5" />
+                        <point x="105.0" y="513.0" />
+                        <point x="337.625" y="513.0" />
+                        <point x="-141.75" y="246.5" />
                       </edge>
                       <edge source="t23_3Node_Internal" target="threeNodeInternal">
                         <point x="0.0" y="-36.5" />
@@ -99,25 +99,27 @@
                       </edge>
                       <edge source="twoNodeLeaf" target="node">
                         <point x="0.0" y="-48.0" />
-                        <point x="582.25" y="501.0" />
-                        <point x="526.625" y="501.0" />
-                        <point x="47.25" y="235.5" />
+                        <point x="582.25" y="523.0" />
+                        <point x="526.625" y="523.0" />
+                        <point x="47.25" y="246.5" />
                       </edge>
                       <edge source="RedBlack_2Node_internal" target="twoNodeInternal">
                         <point x="0.0" y="-70.0" />
-                        <point x="899.5" y="906.0" />
-                        <point x="939.0" y="906.0" />
+                        <point x="899.5" y="928.0" />
+                        <point x="939.0" y="928.0" />
                         <point x="-50.25" y="114.0" />
                       </edge>
                       <edge source="RedBlack_2node_leaf" target="twoNodeLeaf">
                         <point x="0.0" y="-70.0" />
-                        <point x="689.5" y="906.0" />
-                        <point x="621.5" y="906.0" />
+                        <point x="689.5" y="928.0" />
+                        <point x="621.5" y="928.0" />
                         <point x="39.25" y="48.0" />
                       </edge>
                     </edges>
-                    <settings layout="Hierarchic Group" zoom="0.9152249134948096" x="368.23062381852554" y="242.23062381852554" />
-                    <SelectedNodes />
+                    <settings layout="Hierarchic Group" zoom="0.9152249134948096" x="766.6918714555766" y="568.3553875236296" />
+                    <SelectedNodes>
+                      <node>node</node>
+                    </SelectedNodes>
                     <Categories>
                       <Category>Fields</Category>
                       <Category>Constructors</Category>
@@ -129,24 +131,24 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="tree.uml" pinned="false" current-in-tab="true">
+            <file leaf-file-name="tree.uml" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/tree.uml">
                 <provider selected="true" editor-type-id="UmlEditorProvider">
                   <state>
                     <ID>JAVA</ID>
                     <OriginalElement>tree</OriginalElement>
                     <nodes>
-                      <node x="22.5" y="785.0">t23Tree</node>
+                      <node x="3.0" y="697.0">t23Tree</node>
                       <node x="0.0" y="0.0">tree</node>
                     </nodes>
                     <notes />
                     <edges>
                       <edge source="t23Tree" target="tree">
-                        <point x="0.0" y="-113.5" />
-                        <point x="0.0" y="367.5" />
+                        <point x="0.0" y="-102.5" />
+                        <point x="0.0" y="323.5" />
                       </edge>
                     </edges>
-                    <settings layout="Hierarchic Group" zoom="1.2539719626168226" x="130.96081098036007" y="609.4738215017701" />
+                    <settings layout="Hierarchic Group" zoom="1.2539719626168226" x="-251.82286705206027" y="419.39183901621016" />
                     <SelectedNodes>
                       <node>tree</node>
                     </SelectedNodes>
@@ -167,31 +169,19 @@
     </window>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5688716">
+    <splitter split-orientation="horizontal" split-proportion="0.52663165">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="TwoThree.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/TwoThree.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="431">
-                  <caret line="69" column="20" lean-forward="true" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="t23Tree.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="t23Tree.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/t23Tree.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2660">
-                  <caret line="139" column="13" lean-forward="true" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
+                <state relative-caret-position="-1180">
+                  <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
                   <folding>
-                    <element signature="e#5517#5518#0" expanded="true" />
-                    <element signature="e#5541#5542#0" expanded="true" />
-                    <element signature="e#5754#5755#0" expanded="true" />
-                    <element signature="e#5781#5782#0" expanded="true" />
+                    <element signature="e#4546#4547#0" expanded="true" />
+                    <element signature="e#4570#4571#0" expanded="true" />
+                    <element signature="e#4612#4613#0" expanded="true" />
+                    <element signature="e#4639#4640#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -201,11 +191,23 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="tree.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="TwoThree.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/TwoThree.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="220">
+                  <caret line="26" column="20" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="24" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tree.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/tree.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="380">
-                  <caret line="19" column="71" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
+                <state relative-caret-position="220">
+                  <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
                   <folding>
                     <element signature="e#1161#1162#0" expanded="true" />
                     <element signature="e#1188#1189#0" expanded="true" />
@@ -215,6 +217,10 @@
                     <element signature="e#1884#1885#0" expanded="true" />
                     <element signature="e#1943#1944#0" expanded="true" />
                     <element signature="e#2010#2011#0" expanded="true" />
+                    <element signature="e#2640#2641#0" expanded="true" />
+                    <element signature="e#2682#2683#0" expanded="true" />
+                    <element signature="e#2749#2750#0" expanded="true" />
+                    <element signature="e#2811#2812#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -223,7 +229,7 @@
           <file leaf-file-name="node.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/node.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="400">
+                <state relative-caret-position="-800">
                   <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
                   <folding>
                     <element signature="e#482#483#0" expanded="true" />
@@ -312,9 +318,9 @@
         <option value="$PROJECT_DIR$/src/t23_3Node_Internal.java" />
         <option value="$PROJECT_DIR$/src/t23_3Node_Leaf.java" />
         <option value="$PROJECT_DIR$/src/node.java" />
+        <option value="$PROJECT_DIR$/src/tree.java" />
         <option value="$PROJECT_DIR$/src/TwoThree.java" />
         <option value="$PROJECT_DIR$/src/t23Tree.java" />
-        <option value="$PROJECT_DIR$/src/tree.java" />
       </list>
     </option>
   </component>
@@ -432,15 +438,31 @@
       <workItem from="1533714825703" duration="10099000" />
       <workItem from="1533755363702" duration="2471000" />
       <workItem from="1533769098373" duration="61000" />
-      <workItem from="1533849220532" duration="23770000" />
+      <workItem from="1533849220532" duration="32950000" />
     </task>
+    <task id="LOCAL-00001" summary="Completed: addFindHelper &#10;Currently: working on core cases for add function&#10;Important: added new interger tracker variable to keep track of the target location in a 3-node">
+      <created>1533879367978</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1533879367978</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Working -&gt; target locaiton indicator : setTargetLocation3Node">
+      <created>1533880531843</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1533880531843</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153526000" />
+    <option name="totallyTimeSpent" value="162706000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -452,7 +474,7 @@
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49938875" weight="0.27364865" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="10" visible="true" weight="0.32995495" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32995495" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
@@ -463,7 +485,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info anchor="right" id="Debug" order="9" sideWeight="0.4987775" visible="true" weight="0.21088019" />
+      <window_info anchor="right" id="Debug" order="9" sideWeight="0.4987775" visible="true" weight="0.18520783" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Dependency Viewer" order="12" weight="0.32995495" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -474,42 +496,19 @@
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.32995495" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Designer" order="3" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49938875" weight="0.27364865" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="bottom" id="Inspection Results" order="0" weight="0.32995495" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5012225" side_tool="true" weight="0.3963964" />
-      <window_info anchor="bottom" id="Messages" order="1" weight="0.32882884" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Dependency Viewer" order="12" weight="0.32995495" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32995495" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.490991" weight="0.16992664" />
-      <window_info id="Learn" order="7" />
-      <window_info anchor="right" id="Database" order="7" weight="0.3294621" />
-      <window_info anchor="bottom" id="Message" order="2" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-      <window_info id="Structure" order="1" sideWeight="0.509009" side_tool="true" weight="0.16381419" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="3" weight="0.32882884" />
-      <window_info active="true" anchor="right" id="Debug" order="9" sideWeight="0.4987775" visible="true" weight="0.21088019" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -540,24 +539,29 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Completed: addFindHelper &#10;Currently: working on core cases for add function&#10;Important: added new interger tracker variable to keep track of the target location in a 3-node" />
+    <MESSAGE value="Working -&gt; target locaiton indicator : setTargetLocation3Node" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working -&gt; target locaiton indicator : setTargetLocation3Node" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/TwoThree.java</url>
-          <line>58</line>
+          <line>31</line>
           <properties />
-          <option name="timeStamp" value="63" />
+          <option name="timeStamp" value="67" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="67" />
+      <option name="time" value="68" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="addFindHelperNode" />
+        <watch expression="testAddtree" />
       </configuration>
     </watches-manager>
   </component>
@@ -969,95 +973,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node.uml">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>tree</OriginalElement>
-          <nodes>
-            <node x="290.375" y="0.0">node</node>
-            <node x="888.75" y="587.0">twoNodeInternal</node>
-            <node x="503.75" y="653.0">twoNodeLeaf</node>
-            <node x="1014.5" y="964.5">t23_2Node_Internal</node>
-            <node x="23.0" y="964.5">t23_3Node_Internal</node>
-            <node x="410.5" y="964.5">t23_2Node_Leaf</node>
-            <node x="594.5" y="931.0">RedBlack_2node_leaf</node>
-            <node x="0.0" y="521.0">threeNodeInternal</node>
-            <node x="226.5" y="964.5">t23_3Node_Leaf</node>
-            <node x="230.0" y="620.0">threeNodeLeaf</node>
-            <node x="804.5" y="931.0">RedBlack_2Node_internal</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="t23_2Node_Leaf" target="twoNodeLeaf">
-              <point x="0.0" y="-36.5" />
-              <point x="492.5" y="906.0" />
-              <point x="543.0" y="906.0" />
-              <point x="-39.25" y="48.0" />
-            </edge>
-            <edge source="threeNodeLeaf" target="node">
-              <point x="0.0" y="-81.0" />
-              <point x="308.5" y="501.0" />
-              <point x="432.125" y="501.0" />
-              <point x="-47.25" y="235.5" />
-            </edge>
-            <edge source="t23_3Node_Leaf" target="threeNodeLeaf">
-              <point x="0.0" y="-36.5" />
-              <point x="0.0" y="81.0" />
-            </edge>
-            <edge source="t23_2Node_Internal" target="twoNodeInternal">
-              <point x="0.0" y="-36.5" />
-              <point x="1096.5" y="906.0" />
-              <point x="1039.5" y="906.0" />
-              <point x="50.25" y="114.0" />
-            </edge>
-            <edge source="twoNodeInternal" target="node">
-              <point x="0.0" y="-114.0" />
-              <point x="989.25" y="501.0" />
-              <point x="621.125" y="501.0" />
-              <point x="141.75" y="235.5" />
-            </edge>
-            <edge source="threeNodeInternal" target="node">
-              <point x="0.0" y="-180.0" />
-              <point x="105.0" y="491.0" />
-              <point x="337.625" y="491.0" />
-              <point x="-141.75" y="235.5" />
-            </edge>
-            <edge source="t23_3Node_Internal" target="threeNodeInternal">
-              <point x="0.0" y="-36.5" />
-              <point x="0.0" y="180.0" />
-            </edge>
-            <edge source="twoNodeLeaf" target="node">
-              <point x="0.0" y="-48.0" />
-              <point x="582.25" y="501.0" />
-              <point x="526.625" y="501.0" />
-              <point x="47.25" y="235.5" />
-            </edge>
-            <edge source="RedBlack_2Node_internal" target="twoNodeInternal">
-              <point x="0.0" y="-70.0" />
-              <point x="899.5" y="906.0" />
-              <point x="939.0" y="906.0" />
-              <point x="-50.25" y="114.0" />
-            </edge>
-            <edge source="RedBlack_2node_leaf" target="twoNodeLeaf">
-              <point x="0.0" y="-70.0" />
-              <point x="689.5" y="906.0" />
-              <point x="621.5" y="906.0" />
-              <point x="39.25" y="48.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="0.9152249134948096" x="368.23062381852554" y="242.23062381852554" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Fields</Category>
-            <Category>Constructors</Category>
-            <Category>Methods</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/twoNodeInternal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1104,23 +1019,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/tree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="44" column="41" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+          <folding>
+            <element signature="e#1161#1162#0" expanded="true" />
+            <element signature="e#1188#1189#0" expanded="true" />
+            <element signature="e#1746#1747#0" expanded="true" />
+            <element signature="e#1780#1781#0" expanded="true" />
+            <element signature="e#1838#1839#0" expanded="true" />
+            <element signature="e#1884#1885#0" expanded="true" />
+            <element signature="e#1943#1944#0" expanded="true" />
+            <element signature="e#2010#2011#0" expanded="true" />
+            <element signature="e#2640#2641#0" expanded="true" />
+            <element signature="e#2682#2683#0" expanded="true" />
+            <element signature="e#2749#2750#0" expanded="true" />
+            <element signature="e#2811#2812#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-800">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#482#483#0" expanded="true" />
+            <element signature="e#508#509#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TwoThree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tree.uml">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
           <ID>JAVA</ID>
           <OriginalElement>tree</OriginalElement>
           <nodes>
-            <node x="22.5" y="785.0">t23Tree</node>
+            <node x="3.0" y="697.0">t23Tree</node>
             <node x="0.0" y="0.0">tree</node>
           </nodes>
           <notes />
           <edges>
             <edge source="t23Tree" target="tree">
-              <point x="0.0" y="-113.5" />
-              <point x="0.0" y="367.5" />
+              <point x="0.0" y="-102.5" />
+              <point x="0.0" y="323.5" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="1.2539719626168226" x="130.96081098036007" y="609.4738215017701" />
+          <settings layout="Hierarchic Group" zoom="1.2539719626168226" x="-251.82286705206027" y="419.39183901621016" />
           <SelectedNodes>
             <node>tree</node>
           </SelectedNodes>
@@ -1134,53 +1091,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#508#509#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/node.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>tree</OriginalElement>
+          <nodes>
+            <node x="290.375" y="0.0">node</node>
+            <node x="888.75" y="609.0">twoNodeInternal</node>
+            <node x="503.75" y="675.0">twoNodeLeaf</node>
+            <node x="1014.5" y="986.5">t23_2Node_Internal</node>
+            <node x="23.0" y="986.5">t23_3Node_Internal</node>
+            <node x="410.5" y="986.5">t23_2Node_Leaf</node>
+            <node x="594.5" y="953.0">RedBlack_2node_leaf</node>
+            <node x="0.0" y="543.0">threeNodeInternal</node>
+            <node x="226.5" y="986.5">t23_3Node_Leaf</node>
+            <node x="230.0" y="642.0">threeNodeLeaf</node>
+            <node x="804.5" y="953.0">RedBlack_2Node_internal</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="t23_2Node_Leaf" target="twoNodeLeaf">
+              <point x="0.0" y="-36.5" />
+              <point x="492.5" y="928.0" />
+              <point x="543.0" y="928.0" />
+              <point x="-39.25" y="48.0" />
+            </edge>
+            <edge source="threeNodeLeaf" target="node">
+              <point x="0.0" y="-81.0" />
+              <point x="308.5" y="523.0" />
+              <point x="432.125" y="523.0" />
+              <point x="-47.25" y="246.5" />
+            </edge>
+            <edge source="t23_3Node_Leaf" target="threeNodeLeaf">
+              <point x="0.0" y="-36.5" />
+              <point x="0.0" y="81.0" />
+            </edge>
+            <edge source="t23_2Node_Internal" target="twoNodeInternal">
+              <point x="0.0" y="-36.5" />
+              <point x="1096.5" y="928.0" />
+              <point x="1039.5" y="928.0" />
+              <point x="50.25" y="114.0" />
+            </edge>
+            <edge source="twoNodeInternal" target="node">
+              <point x="0.0" y="-114.0" />
+              <point x="989.25" y="523.0" />
+              <point x="621.125" y="523.0" />
+              <point x="141.75" y="246.5" />
+            </edge>
+            <edge source="threeNodeInternal" target="node">
+              <point x="0.0" y="-180.0" />
+              <point x="105.0" y="513.0" />
+              <point x="337.625" y="513.0" />
+              <point x="-141.75" y="246.5" />
+            </edge>
+            <edge source="t23_3Node_Internal" target="threeNodeInternal">
+              <point x="0.0" y="-36.5" />
+              <point x="0.0" y="180.0" />
+            </edge>
+            <edge source="twoNodeLeaf" target="node">
+              <point x="0.0" y="-48.0" />
+              <point x="582.25" y="523.0" />
+              <point x="526.625" y="523.0" />
+              <point x="47.25" y="246.5" />
+            </edge>
+            <edge source="RedBlack_2Node_internal" target="twoNodeInternal">
+              <point x="0.0" y="-70.0" />
+              <point x="899.5" y="928.0" />
+              <point x="939.0" y="928.0" />
+              <point x="-50.25" y="114.0" />
+            </edge>
+            <edge source="RedBlack_2node_leaf" target="twoNodeLeaf">
+              <point x="0.0" y="-70.0" />
+              <point x="689.5" y="928.0" />
+              <point x="621.5" y="928.0" />
+              <point x="39.25" y="48.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.9152249134948096" x="766.6918714555766" y="568.3553875236296" />
+          <SelectedNodes>
+            <node>node</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/t23Tree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2660">
-          <caret line="139" column="13" lean-forward="true" selection-start-line="139" selection-start-column="13" selection-end-line="139" selection-end-column="13" />
+        <state relative-caret-position="-1180">
+          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
           <folding>
-            <element signature="e#5517#5518#0" expanded="true" />
-            <element signature="e#5541#5542#0" expanded="true" />
-            <element signature="e#5754#5755#0" expanded="true" />
-            <element signature="e#5781#5782#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="19" column="71" selection-start-line="19" selection-start-column="71" selection-end-line="19" selection-end-column="71" />
-          <folding>
-            <element signature="e#1161#1162#0" expanded="true" />
-            <element signature="e#1188#1189#0" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
-            <element signature="e#1780#1781#0" expanded="true" />
-            <element signature="e#1838#1839#0" expanded="true" />
-            <element signature="e#1884#1885#0" expanded="true" />
-            <element signature="e#1943#1944#0" expanded="true" />
-            <element signature="e#2010#2011#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TwoThree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="69" column="20" lean-forward="true" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#4546#4547#0" expanded="true" />
+            <element signature="e#4570#4571#0" expanded="true" />
+            <element signature="e#4612#4613#0" expanded="true" />
+            <element signature="e#4639#4640#0" expanded="true" />
           </folding>
         </state>
       </provider>

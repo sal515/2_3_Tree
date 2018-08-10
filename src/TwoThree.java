@@ -23,11 +23,10 @@ class TwoThree {
         treeObj = testTreeStep6();
 //        treeObj = testTreeStep7();
 
-
 // testing add function
+        tree testAddtree = new t23Tree();
         int findVal = 890;
-        treeObj.addHelp(findVal, treeObj.getRoot());
-
+        testAddtree.addHelp(findVal, testAddtree.getRoot(), testAddtree);
 
 
         int unnecessary = 9999;

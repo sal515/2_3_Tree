@@ -107,26 +107,56 @@ public class t23Tree extends tree {
 
 
     @Override
-    boolean addHelp(int val, node rt) {
+    boolean addHelp(int val, node rt, tree treeObj) {
         node targetNode = addFindHelp(val, rt);
-        if (targetNode!= null) {
+        if (targetNode != null) {
             if (targetNode.is3node()) {
-                System.out.println(targetNode.getKey1());
-                System.out.println(targetNode.getKey2());
+                System.out.println(targetNode.getKey1() + " " + targetNode.getKey2());
                 System.out.println(getTargetLocation3Node());
             } else {
                 System.out.println(targetNode.getKey1());
             }
         }
 
+        // root == null
+        // 1. make a new 2-node
+        // 2. insert into the 2-node - single key
+        if (treeObj.isEmpty(treeObj.getRoot())) {
+            treeObj.setRoot(node.initializeNode(new t23_2Node_Leaf(), null,
+                    null, null, null, val, -1));
+        }
+        // insert into a 2-node -> root (no parent)
+        // -> !is3node && isRoot
+        // 1. replace the 2-node with a new 3-node
+        // 2. insert into the 3-node - both keys
+
+
+        // insert into a 3-node -> root (no parent)
+        // -> is3node && isRoot
+        // 1. (split) replace the 3-node with 3 new 2-nodes
+        // 2. (promote) insert into the 1 2-node - the middle key (new root)
+        // 3. insert into the 2 2-nodes - left and right keys (2 children)
+
+        // insert into a 3-node with 2-node parent
+        // -> is3node && !isRoot && !getParent.is3node
+        // 1. (split)replace the 3-node with 2 2-nodes
+        // 2. (promote) insert into the parent 2-node - the middle key
+        // 3. insert into the new 2 2-nodes - left and right keys of the original 3-node
+
+
+        // insert into a 3-node with 3-node parent
+        // -> is3node && !isRoot && getParent.is3node && !getParent.isRoot
+        // 1. (split) replace the target 3-node with 2 2-nodes
+        // 3. (promote) the middle value of the target 3-node to the parent 3-node
+        // 2. (split) replace the parent 3-node with 3 2-nodes
+        // 4. (promote) the middle value of the parent 3-node to parent 2-node
+        // 5. repeat above steps if root is imvolved
+
+        // Split the root
+        // --> is3node && !isRoot && getParent.is3node && getParent.isRoot
+        //
 
         return false;
-    }
-
-
-    @Override
-    int getSubTreeSize(node nodeObj) {
-        return 0;
     }
 
     @Override
@@ -134,7 +164,6 @@ public class t23Tree extends tree {
         if (find(val, rt) != null) {
             return true;
         } else {
-
         }
 
 
@@ -142,13 +171,18 @@ public class t23Tree extends tree {
     }
 
     @Override
-    node remove(int val) {
-        return null;
+    void traverse(node rt) {
+
     }
 
     @Override
-    void traverse(node rt) {
+    int getSubTreeSize(node nodeObj) {
+        return 0;
+    }
 
+    @Override
+    node remove(int val) {
+        return null;
     }
 
     @Override

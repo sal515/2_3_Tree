@@ -44,7 +44,7 @@ abstract class tree {
 
     abstract boolean add(int val, node rt);
 
-    abstract boolean addHelp(int val, node rt);
+    abstract boolean addHelp(int val, node rt, tree treeObj);
 
     abstract node addFindHelp(int val, node rt);
 
