@@ -17,8 +17,10 @@ abstract class tree {
     // eg. of a 3node
     // keys are:                10 20
     // target locations are :  0  1  2
+    // target location default is -1
+    // name of the variable for target location: targetLocation3Node
     // target location can be int from 0 to 2 depending on the location
-    private int targetLocation3Node = 0;     // only used for addfindhelp method
+    private int targetLocation3Node = -1;     // only used for addfindhelp method
 
 //    private boolean found = false;     // only used for addFindHelp method
 
@@ -100,7 +102,13 @@ abstract class tree {
         tree.setComparisons(tree.getComparisons() + number);
     }
 
+    public int getTargetLocation3Node() {
+        return targetLocation3Node;
+    }
 
+    public void setTargetLocation3Node(int targetLocation3Node) {
+        this.targetLocation3Node = targetLocation3Node;
+    }
 
     //    public boolean isFound() {
 //        return found;

@@ -25,10 +25,12 @@ class TwoThree {
 
 
 // testing add function
-        int findVal = 501;
-        treeObj.addHelp(10, treeObj.getRoot());
+        int findVal = 890;
+        treeObj.addHelp(findVal, treeObj.getRoot());
 
 
+
+        int unnecessary = 9999;
 
 
 // testing add - find helper function - target node locator
@@ -54,10 +56,6 @@ class TwoThree {
 //        testClass.charExtractor("test.txt", operationsQueueObj);
 //        testClass.charExtractor("Operations.txt");
 //        testClass.charExtractor("OperationsOLD.txt");
-
-
-        int unnecessary = 9999;
-//        System.out.println("ignore: " + unnecessary);
 
     }
 

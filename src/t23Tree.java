@@ -28,6 +28,7 @@ public class t23Tree extends tree {
                 comparisonsIncrement(1);
                 if (rt.isLeaf()) {
 //                    setFound(false);
+                    setTargetLocation3Node(0);
                     return rt;
                 } else {
                     return addFindHelp(val, rt.getLeftChild());
@@ -39,6 +40,7 @@ public class t23Tree extends tree {
                 if (val < checkKey2) {
                     comparisonsIncrement(1);
                     if (rt.isLeaf()) {
+                        setTargetLocation3Node(1);
 //                        setFound(false);
                         return rt;
                     } else {
@@ -49,6 +51,7 @@ public class t23Tree extends tree {
                 else if (val > checkKey2) {
                     comparisonsIncrement(2);
                     if (rt.isLeaf()) {
+                        setTargetLocation3Node(2);
 //                        setFound(false);
                         return rt;
                     } else {
@@ -110,6 +113,7 @@ public class t23Tree extends tree {
             if (targetNode.is3node()) {
                 System.out.println(targetNode.getKey1());
                 System.out.println(targetNode.getKey2());
+                System.out.println(getTargetLocation3Node());
             } else {
                 System.out.println(targetNode.getKey1());
             }
