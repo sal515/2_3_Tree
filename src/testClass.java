@@ -29,7 +29,8 @@ public class testClass {
         // find where the new key is supposed to go in the 3-node
         // splits the 3-node to 2x 2-nodes
         // makes the 3-node as the parent of the 2x 2-nodes
-        // and sets the children keys appropriately but leaves the MIDDLE KEY HANGING
+        // and sets the children keys appropriately but
+        // leaves the MIDDLE KEY HANGING
         // returns the 3-node with 2x 2-node children
     }
 
@@ -37,24 +38,32 @@ public class testClass {
     public void split3NodeInternal(node rt) {
 
         // takes in a internal 3-node to be split
-        // then splits the 3-node into 4x 2-node - CAREFULLY NOT MISPLACING THE FOUR CHILDREN
+        // then splits the 3-node into 4x 2-node -
+        // CAREFULLY NOT MISPLACING THE FOUR CHILDREN
         // returns the control to the recursive function
 
 
     }
 
-    // this function tries to absorb the child 2-nodes of the splitted 3-node by the split function above
+    // this function tries to absorb the child 2-nodes of the
+    // splitted 3-node by the split function above
     public void promote(node rt) {
 
-        if (true) {  // !Split_3-node.getparent().is3node --> parent of the 3-node is 2-node
-            // function into the 2-node parent turning it into a 3-node parent
+        if (true) {  // !Split_3-node.getparent().is3node -->
+            // parent of the 3-node is 2-node
+            // function into the 2-node parent turning it into a
+            // 3-node parent
         }
         // // Split_3-node.getparent().is3node --> the parent is a 3-node
         else {
             split3NodeInternal(rt);
-            if (true) { // split_3-node.getParent().getParent() != null --> parent of the parent of the 3-node is 3-node
+            if (true) {
+                // split_3-node.getParent().getParent() != null -->
+                // parent of the parent of the 3-node is 3-node
                 // rt.getParent().
-                promote(rt); // recursive function - with base case when it hits null or a 2-node
+                promote(rt);
+                // recursive function -
+                // with base case when it hits null or a 2-node
             }
         }
 

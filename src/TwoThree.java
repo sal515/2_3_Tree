@@ -32,6 +32,9 @@ class TwoThree {
         testAddtree.addHelp(82, testAddtree.getRoot(), testAddtree);
         testAddtree.addHelp(529, testAddtree.getRoot(), testAddtree);
         testAddtree.addHelp(500, testAddtree.getRoot(), testAddtree);
+        testAddtree.addHelp(900, testAddtree.getRoot(), testAddtree);
+        testAddtree.addHelp(794, testAddtree.getRoot(), testAddtree);
+        testAddtree.addHelp(563, testAddtree.getRoot(), testAddtree);
 
 
         int unnecessary = 9999;
