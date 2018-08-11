@@ -1,5 +1,6 @@
-public class RedBlack_2node_leaf extends twoNodeLeaf{
+public class RedBlack_2node_leaf extends twoNodeLeaf {
     boolean color;  // true - if red
+
     boolean isRed() {
         return this.getColor();
     }

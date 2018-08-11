@@ -5,9 +5,7 @@ abstract class twoNodeLeaf extends node {
     // int key1
     // node parent
 
-
     private int key1 = 0;
-
 
     // ====================== Member variables ===================================
 
@@ -17,7 +15,6 @@ abstract class twoNodeLeaf extends node {
     public void setKey1(int key1) {
         this.key1 = key1;
     }
-
 
     @Override
     public int getKey1() {

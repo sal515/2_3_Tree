@@ -1,16 +1,34 @@
 import inputManagerPackage.inputManager;
 import inputManagerPackage.operationsQueue;
 
-// ====================== Member variables ===================================
-// ====================== abstract member functions ===================================
-// ====================== member functions ===================================
-// ====================== getters and setters ===================================
-
-
 class TwoThree {
 
     public static void main(String[] args) {
-        // write your code here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         operationsQueue operationsQueueObj = inputManager.instructionExtractor("test.txt");
 //        inputManagerPackage.inputManager.testPrintAllChar("test.txt");
@@ -20,34 +38,20 @@ class TwoThree {
 
 // testing with manual tree made by me -- from the assignment provided example
         tree treeObj;
-//        treeObj = testTreeStep6();
+        treeObj = testTreeStep6();
 //        treeObj = testTreeStep7();
-
+        treeObj.preOrderTraverse(treeObj.getRoot());
+        System.out.println();
 
 // testing add function
         tree testAddtree = new t23Tree();
         int findVal = 901;
-        testAddtree.addHelp(280, testAddtree.getRoot(), testAddtree);
-        testAddtree.addHelp(563, testAddtree.getRoot(), testAddtree);
-        testAddtree.addHelp(82, testAddtree.getRoot(), testAddtree);
-        testAddtree.addHelp(529, testAddtree.getRoot(), testAddtree);
-        testAddtree.addHelp(500, testAddtree.getRoot(), testAddtree);
-        testAddtree.addHelp(900, testAddtree.getRoot(), testAddtree);
-        testAddtree.addHelp(794, testAddtree.getRoot(), testAddtree);
-        testAddtree.addHelp(563, testAddtree.getRoot(), testAddtree);
-
-
+        buildAsstree(testAddtree);
+        t23output(testAddtree, 6);
         int unnecessary = 9999;
 // testing add - find helper function - target node locator
 //        node addFindHelperNode = treeObj.addFindHelp(findVal, treeObj.getRoot(), testAddtree);
 //        checkAddFindHelper(treeObj, addFindHelperNode);
-
-
-// testing how to initialize nodes easily
-//        node parent = new t23_3Node_Internal();
-//        node parent = new t23_3Node_Internal();
-//        parent = node.initializeNode(parent, null, new t23_3Node_Leaf(),
-//                new t23_2Node_Leaf(), new t23_2Node_Leaf(), 280, 529);
 
 
 // testing how to recognize the value found
@@ -57,11 +61,42 @@ class TwoThree {
 
 
 // random checks - to learn theory - unrelated to assignment
-
 //        testClass.charExtractor("test.txt", operationsQueueObj);
 //        testClass.charExtractor("Operations.txt");
 //        testClass.charExtractor("OperationsOLD.txt");
 
+    }
+
+    private static void t23output(tree treeObj, int stepNumber) {
+        System.out.print(
+                treeObj.getThreeNodeCounter() + " Three Nodes Created " +
+                        treeObj.getAddInstructionCounter() + " add operations " +
+                        treeObj.getFindInstructionCounter() + " find operations " +
+                        treeObj.getRemoveInstructionCounter() + " remove operations " +
+                        "Pre-order traversal after step " + stepNumber + ": "
+        );
+        treeObj.preOrderTraverse(treeObj.getRoot());
+
+    }
+
+    private static void t23outputTest(tree testAddtree) {
+        System.out.print(testAddtree.getThreeNodeCounter());
+        System.out.println(testAddtree.getAddInstructionCounter());
+        System.out.println(testAddtree.getFindInstructionCounter());
+        System.out.println(testAddtree.getRemoveInstructionCounter());
+        testAddtree.preOrderTraverse(testAddtree.getRoot());
+    }
+
+    private static void buildAsstree(tree testAddtree) {
+        testAddtree.add(280, testAddtree.getRoot(), testAddtree);
+        testAddtree.add(563, testAddtree.getRoot(), testAddtree);
+        testAddtree.add(82, testAddtree.getRoot(), testAddtree);
+        testAddtree.add(529, testAddtree.getRoot(), testAddtree);
+        testAddtree.add(500, testAddtree.getRoot(), testAddtree);
+        testAddtree.add(900, testAddtree.getRoot(), testAddtree);
+        testAddtree.add(794, testAddtree.getRoot(), testAddtree);
+        t23Tree.findInstructionCounterIncrement();
+        testAddtree.find(563, testAddtree.getRoot());
     }
 
     // testing purposes

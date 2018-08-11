@@ -1,12 +1,13 @@
 public class t23Tree extends tree {
 
     @Override
-    boolean addHelp(int val, node rt, tree treeObj) {
+    boolean add(int val, node rt, tree treeObj) {
+        addInstructionCounterIncrement();
         node targetNode = treeObj.addFindHelp(val, rt, treeObj);
         // ------------------------------------------------------
         // testing function
-        TwoThree.checkAddFindHelper(treeObj, targetNode);
-        System.out.println();
+//        TwoThree.checkAddFindHelper(treeObj, targetNode);
+//        System.out.println();
         // ------------------------------------------------------
 
         int firstPosition = treeObj.getTargetLocation3Node();
@@ -219,7 +220,11 @@ public class t23Tree extends tree {
                         targetNode.getParent().getRightChild(),
                         2);
                 // pointing the children towards their respective parent after rearrangement
-                targetNode.getParent().setParent(targetNode.getParent().getParent());
+//                targetNode.getParent().setParent(targetNode.getParent().getParent());
+                targetNode.setChildPos(targetNode.getParent().getChildPos());
+                targetNode.setParent(targetNode.getParent().getParent());
+                tempNode1.getParent().setLeftChild(tempNode1);
+                tempNode2.getParent().setRightChild(tempNode2);
                 tempNode1.getLeftChild().setParent(tempNode1);
                 tempNode1.getRightChild().setParent(tempNode1);
                 tempNode2.getRightChild().setParent(tempNode2);
@@ -428,17 +433,50 @@ public class t23Tree extends tree {
 
 
     @Override
-    boolean add(int val, node rt) {
-        return false;
+    void inorderTraverse(node rt) {
+        if (rt == null) return;
+        if (rt.isLeaf()) printNodeValues(rt);
+        else if (!rt.is3node()) {
+            inorderTraverse(rt.getLeftChild());
+            printNodeValues(rt);
+            inorderTraverse(rt.getRightChild());
+        } else {
+            inorderTraverse(rt.getLeftChild());
+            printNodeValues(rt);
+            inorderTraverse(rt.getMiddleChild());
+            printNodeValues(rt);
+            inorderTraverse(rt.getRightChild());
+        }
     }
 
     @Override
-    void traverse(node rt) {
+    void preOrderTraverse(node rt) {
+        if (rt == null) return;
+        if (rt.isLeaf()) printNodeValues(rt);
+        else if (!rt.is3node()) {
+            printNodeValues(rt);
+            preOrderTraverse(rt.getLeftChild());
+            preOrderTraverse(rt.getRightChild());
 
+        } else {
+            printNodeValues(rt);
+            preOrderTraverse(rt.getLeftChild());
+            preOrderTraverse(rt.getMiddleChild());
+            preOrderTraverse(rt.getRightChild());
+        }
+    }
+
+    private void printNodeValues(node rt) {
+        if (rt.is3node()) {
+            System.out.print(rt.getKey1() + " " + rt.getKey2() + " ");
+        } else {
+            System.out.print(rt.getKey1() + " ");
+        }
     }
 
     @Override
     node remove(int val) {
+        removeInstructionCounterIncrement();
         return null;
     }
 
@@ -562,6 +600,7 @@ public class t23Tree extends tree {
     }
 
     public node create3NodeLeaf(int key1, int key2, node parent, int childPos) {
+        threeNodeInstructionCounterIncrement();
         node newNode = new t23_3Node_Leaf();
         newNode.setKey1(key1);
         newNode.setKey2(key2);
@@ -572,6 +611,7 @@ public class t23Tree extends tree {
 
     public node create3NodeInternal(int key1, int key2, node parent,
                                     node left, node middle, node right, int childPos) {
+        threeNodeInstructionCounterIncrement();
         node newNode = new t23_3Node_Internal();
         newNode.setKey1(key1);
         newNode.setKey2(key2);

@@ -1,16 +1,17 @@
 abstract class tree {
 
-
     // ====================== Member variables ===================================
 
     private static int comparisons = 0;
 
     private node root = null;
 
-    private stack stackObj = null;
-
     private boolean isKey2Find = false;     // only used for find method
 
+    private static int addInstructionCounter = 0;
+    private static int findInstructionCounter = 0;
+    private static int removeInstructionCounter = 0;
+    private static int threeNodeCounter = 0;
 
     // eg. of a 3node
     // keys are:                10 20
@@ -27,7 +28,6 @@ abstract class tree {
 
     tree() {
         root = null;
-        stackObj = null;
         isKey2Find = false;
     }
 
@@ -37,17 +37,15 @@ abstract class tree {
 
     abstract node find(int val, node rt);
 
-    abstract boolean add(int val, node rt);
-
-    abstract boolean addHelp(int val, node rt, tree treeObj);
+    abstract boolean add(int val, node rt, tree treeObj);
 
     abstract node addFindHelp(int val, node rt, tree treeObj);
 
     abstract node remove(int val);
 
-//    abstract void traverse();
+    abstract void inorderTraverse(node rt);
 
-    abstract void traverse(node rt);
+    abstract void preOrderTraverse(node rt);
 
 
     // ====================== abstract member functions ===================================
@@ -59,14 +57,6 @@ abstract class tree {
 
     public void setRoot(node root) {
         this.root = root;
-    }
-
-    public void setStackObj(stack stackObj) {
-        this.stackObj = stackObj;
-    }
-
-    public stack getStackObj() {
-        return stackObj;
     }
 
     public boolean isKey2Find() {
@@ -97,21 +87,54 @@ abstract class tree {
         this.targetLocation3Node = targetLocation3Node;
     }
 
-    //    public boolean isFound() {
-//        return found;
-//    }
+    public static int getAddInstructionCounter() {
+        return addInstructionCounter;
+    }
 
-//    public void setFound(boolean found) {
-//        this.found = found;
-//    }
+    public static void setAddInstructionCounter(int addInstructionCounter) {
+        tree.addInstructionCounter = addInstructionCounter;
+    }
 
-//    public node getAddfindHelpReturnObj() {
-//        return addfindHelpReturnObj;
-//    }
+    public static int getFindInstructionCounter() {
+        return findInstructionCounter;
+    }
 
-//    public void setAddfindHelpReturnObj(node addfindHelpReturnObj) {
-//        this.addfindHelpReturnObj = addfindHelpReturnObj;
-//    }
+    public static void setFindInstructionCounter(int findInstructionCounter) {
+        tree.findInstructionCounter = findInstructionCounter;
+    }
+
+    public static int getRemoveInstructionCounter() {
+        return removeInstructionCounter;
+    }
+
+    public static void setRemoveInstructionCounter(int removeInstructionCounter) {
+        tree.removeInstructionCounter = removeInstructionCounter;
+    }
+
+    public static int getThreeNodeCounter() {
+        return threeNodeCounter;
+    }
+
+    public static void setThreeNodeCounter(int threeNodeCounter) {
+        tree.threeNodeCounter = threeNodeCounter;
+    }
+
+    public static void addInstructionCounterIncrement() {
+        tree.setAddInstructionCounter(tree.getAddInstructionCounter() + 1);
+    }
+
+    public static void findInstructionCounterIncrement() {
+        tree.setFindInstructionCounter(tree.getFindInstructionCounter() + 1);
+    }
+
+    public static void removeInstructionCounterIncrement() {
+        tree.setRemoveInstructionCounter(tree.getRemoveInstructionCounter() + 1);
+    }
+
+    public static void threeNodeInstructionCounterIncrement() {
+        tree.setThreeNodeCounter(tree.getThreeNodeCounter() + 1);
+    }
+
 
     // ====================== getters and setters ===================================
 

@@ -1,5 +1,6 @@
-public class RedBlack_2Node_internal extends twoNodeInternal  {
+public class RedBlack_2Node_internal extends twoNodeInternal {
     boolean color;  // true - if red
+
     boolean isRed() {
         return this.getColor();
     }
