@@ -1,23 +1,64 @@
 
 public class testClass {
 
-
-    public static void classCheck(Object obj, String Obj2) {
-//        if (obj instanceof Obj2){
-//            System.out.println("true");
-//        } else{
-//            System.out.println("testClass.classCheck");
-//        }
-    }
-
-
-    public static void treeOperations(String fileName) {
-    }
-
-    public static void printFile(String[] in) {
-        for (String anIn : in) {
-            System.out.print(anIn);
+    // function looks for the leaf - to insert the new key
+    public void addHelp(int key) {
+        node rt = null;
+        // looks for a leaf
+        if (rt.isLeaf()) {
+            if (!rt.is3node()) {
+                // convert the 2-node to 3-node
+                // insert the key in the new 3-node
+                // key should go in the proper position
+            }
+            // it is a 3 node already
+            else {
+                split3NodeLeaf(key);
+                if (rt.getParent() != null) {
+                    //rt.getParent(). -
+                    promote(rt);
+                }
+            }
+            return;
         }
+    }
+
+
+    // function splits a 3-node leaf
+    public void split3NodeLeaf(int key) {
+        // find where the new key is supposed to go in the 3-node
+        // splits the 3-node to 2x 2-nodes
+        // makes the 3-node as the parent of the 2x 2-nodes
+        // and sets the children keys appropriately but leaves the MIDDLE KEY HANGING
+        // returns the 3-node with 2x 2-node children
+    }
+
+    //
+    public void split3NodeInternal(node rt) {
+
+        // takes in a internal 3-node to be split
+        // then splits the 3-node into 4x 2-node - CAREFULLY NOT MISPLACING THE FOUR CHILDREN
+        // returns the control to the recursive function
+
+
+    }
+
+    // this function tries to absorb the child 2-nodes of the splitted 3-node by the split function above
+    public void promote(node rt) {
+
+        if (true) {  // !Split_3-node.getparent().is3node --> parent of the 3-node is 2-node
+            // function into the 2-node parent turning it into a 3-node parent
+        }
+        // // Split_3-node.getparent().is3node --> the parent is a 3-node
+        else {
+            split3NodeInternal(rt);
+            if (true) { // split_3-node.getParent().getParent() != null --> parent of the parent of the 3-node is 3-node
+                // rt.getParent().
+                promote(rt); // recursive function - with base case when it hits null or a 2-node
+            }
+        }
+
+
     }
 
 

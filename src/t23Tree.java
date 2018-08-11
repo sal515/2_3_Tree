@@ -8,7 +8,151 @@ public class t23Tree extends tree {
 
     // ====================== Member variables ===================================
 
+
     // ====================== Member functions ===================================
+
+
+    // ====================== node creating function ===================================
+
+    public node create2NodeLeaf(int key1, node parent) {
+        node newNode = new t23_2Node_Leaf();
+        newNode.setKey1(key1);
+        newNode.setParent(parent);
+        return newNode;
+    }
+
+    public node create2NodeInternal(int key1, node parent,
+                                    node left, node right) {
+        node newNode = new t23_2Node_Internal();
+        newNode.setKey1(key1);
+        newNode.setLeftChild(left);
+        newNode.setRightChild(right);
+        newNode.setParent(parent);
+        return newNode;
+    }
+
+    public node create3NodeLeaf(int key1, int key2, node parent) {
+        node newNode = new t23_3Node_Leaf();
+        newNode.setKey1(key1);
+        newNode.setKey2(key2);
+        newNode.setParent(parent);
+        return newNode;
+    }
+
+    public node create3NodeInternal(int key1, int key2, node parent,
+                                    node left, node middle, node right) {
+        node newNode = new t23_3Node_Internal();
+        newNode.setKey1(key1);
+        newNode.setKey2(key2);
+        newNode.setLeftChild(left);
+        newNode.setRightChild(right);
+        newNode.setMiddleChild(middle);
+        newNode.setParent(parent);
+        return newNode;
+    }
+
+//    public node create4NodeInternal(int key1, int key2, int key3, node parent,
+//                                    node left, node middle, node right, node fourthTemp) {
+//        node newNode = new t23_temp4NodeInternal();
+//        newNode.setKey1(key1);
+//        newNode.setKey2(key2);
+//        newNode.setKey3(key3);
+//        newNode.setLeftChild(left);
+//        newNode.setRightChild(right);
+//        newNode.setMiddleChild(middle);
+//        newNode.setFourthChildTemp(fourthTemp);
+//        newNode.setParent(parent);
+//        return newNode;
+//    }
+//
+//    public node create4NodeLeaf(int key1, int key2, int key3, node parent) {
+//        node newNode = new t23_temp4NodeLeaf();
+//        newNode.setKey1(key1);
+//        newNode.setKey2(key2);
+//        newNode.setKey3(key3);
+//        newNode.setParent(parent);
+//        return newNode;
+//    }
+
+    // ====================== node creating function ===================================
+
+
+    // ====================== node convert and build functions ===================================
+
+    // making 2 node root from null
+    public node build_2Node_RootLeaf(int key) {
+        node newNode = create2NodeLeaf(key, null);
+        return newNode;
+    }
+
+    // converting to a 3 node leaf from 2 node leaf
+    public node convert_3NodeL_from_2NodeL(int key, int insertKeyPos, node twoNode) {
+        // if insert key position is 0 , new key goes on left
+        node threeNode = null;
+        if (insertKeyPos == 0) {
+            threeNode = create3NodeLeaf(key, twoNode.getKey1(), twoNode.getParent());
+        }
+        // if insert key position is other than 0, new key goes on the right
+        else threeNode = create3NodeLeaf(twoNode.getKey1(), key, twoNode.getParent());
+        twoNode = null;
+        return threeNode;
+    }
+
+    // converting to a 3 node internal from 2 node internal
+    public node convert_3NodeI_from_2NodeI(int key, int insertKeyPos, node twoNode) {
+        // if insert key position is 0 , new key goes on left
+        node threeNode = null;
+        if (insertKeyPos == 0) {
+            threeNode = create3NodeInternal(key, twoNode.getKey1(), twoNode.getParent(), twoNode.getLeftChild(),
+                    twoNode.getMiddleChild(), twoNode.getRightChild());
+        } else if (insertKeyPos == 1) {
+
+        }
+        // if insert key position is other than 0, new key goes on the right
+        else {
+            threeNode = create3NodeLeaf(twoNode.getKey1(), key, twoNode.getParent());
+        }
+        twoNode = null;
+        return threeNode;
+    }
+
+    // ====================== node building functions ===================================
+
+    // ====================== split and promote functions ===================================
+
+
+    // splitting 3 node root to 3x new 2 node : returns parent (2N) , left and right children (2N)
+    public node[] split_3nodeRootLeaf(int key, int insertKeyPos, node threeNodeRoot) {
+        // What the positions mean int the return array
+        int parentPos = 0;
+        int leftChildPos = 1;
+        int rightChildPos = 2;
+
+        node newNodes[] = new node[3];
+        // if insert key position is 0 , new key is left child
+        if (insertKeyPos == 0) {
+            newNodes[parentPos] = create2NodeLeaf(threeNodeRoot.getKey1(), null);
+            newNodes[leftChildPos] = create2NodeLeaf(key, newNodes[parentPos]);
+            newNodes[rightChildPos] = create2NodeLeaf(threeNodeRoot.getKey2(), newNodes[parentPos]);
+        }
+        // if insert key position is 1 , new key is middle child
+        else if (insertKeyPos == 1) {
+            newNodes[parentPos] = create2NodeLeaf(key, null);
+            newNodes[leftChildPos] = create2NodeLeaf(threeNodeRoot.getKey1(), newNodes[parentPos]);
+            newNodes[rightChildPos] = create2NodeLeaf(threeNodeRoot.getKey2(), newNodes[parentPos]);
+        }
+        // if insert key position is 2 or o.w. , new key is right child
+        else {
+            newNodes[parentPos] = create2NodeLeaf(threeNodeRoot.getKey2(), null);
+            newNodes[leftChildPos] = create2NodeLeaf(threeNodeRoot.getKey1(), newNodes[parentPos]);
+            newNodes[rightChildPos] = create2NodeLeaf(key, newNodes[parentPos]);
+        }
+        threeNodeRoot = null;
+        return newNodes;
+    }
+
+    // ====================== split and promote functions ===================================
+
 
     // returns null if insert value is found
     @Override
