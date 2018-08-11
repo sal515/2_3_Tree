@@ -4,9 +4,16 @@ public abstract class node {
 
     private node parent;
 
+    // childPos = -1 - not a child
+    // childPos = 0 - left child
+    // childPos = 1 - middle child
+    // childPos = 2 - right child
+    private int childPos;
+
     // ====================== Member variables ===================================
 
     node() {
+        childPos = -1;
         setParent(null);
     }
 
@@ -197,6 +204,14 @@ public abstract class node {
 
     // ====================== getters and setters ===================================
 
+
+    public int getChildPos() {
+        return childPos;
+    }
+
+    public void setChildPos(int childPos) {
+        this.childPos = childPos;
+    }
 
     public node getParent() {
         return parent;

@@ -2,7 +2,7 @@
 public class testClass {
 
     // function looks for the leaf - to insert the new key
-    public void addHelp(int key) {
+    public void addHHelp(int key) {
         node rt = null;
         // looks for a leaf
         if (rt.isLeaf()) {

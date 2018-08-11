@@ -38,15 +38,13 @@ abstract class tree {
 
     abstract boolean isEmpty(node rt);
 
-    abstract int getSubTreeSize(node nodeObj);
-
     abstract node find(int val, node rt);
 
     abstract boolean add(int val, node rt);
 
     abstract boolean addHelp(int val, node rt, tree treeObj);
 
-    abstract node addFindHelp(int val, node rt);
+    abstract node addFindHelp(int val, node rt, tree treeObj);
 
     abstract node remove(int val);
 

@@ -25,17 +25,19 @@ class TwoThree {
 
 // testing add function
         tree testAddtree = new t23Tree();
-        int findVal = 890;
-        testAddtree.addHelp(findVal, testAddtree.getRoot(), testAddtree);
-
-
-        int unnecessary = 9999;
+        int findVal = 901;
+        testAddtree.addHelp(280, testAddtree.getRoot(), testAddtree);
+        testAddtree.addHelp(563, testAddtree.getRoot(), testAddtree);
+        testAddtree.addHelp(82, testAddtree.getRoot(), testAddtree);
+        testAddtree.addHelp(529, testAddtree.getRoot(), testAddtree);
+        testAddtree.addHelp(500, testAddtree.getRoot(), testAddtree);
 
 
 // testing add - find helper function - target node locator
-//        node addFindHelperNode = treeObj.addFindHelp(findVal, treeObj.getRoot());
+//        node addFindHelperNode = treeObj.addFindHelp(findVal, treeObj.getRoot(), testAddtree);
 //        checkAddFindHelper(treeObj, addFindHelperNode);
 
+        int unnecessary = 9999;
 
 // testing how to initialize nodes easily
 //        node parent = new t23_3Node_Internal();
@@ -58,16 +60,20 @@ class TwoThree {
 
     }
 
-    private static void checkAddFindHelper(tree treeObj, node addFindHelperNode) {
+    // testing purposes
+    public static void checkAddFindHelper(tree treeObj, node addFindHelperNode) {
         if (!(addFindHelperNode == null)) {
             if (addFindHelperNode.is3node()) {
                 System.out.println("Target Node with key1: " + addFindHelperNode.getKey1() + " key2 " +
                         addFindHelperNode.getKey2() + " comparisons : " + tree.getComparisons());
-                System.out.println("3 node: " + addFindHelperNode.is3node());
+                System.out.println("3-node: " + addFindHelperNode.is3node());
+                System.out.println("Target Location: " + treeObj.getTargetLocation3Node());
             } else {
                 System.out.println("Target Node with key: " + addFindHelperNode.getKey1() +
                         " comparisons : " + tree.getComparisons());
-                System.out.println("3 node: " + addFindHelperNode.is3node());
+                System.out.println("3-node: " + addFindHelperNode.is3node());
+                System.out.println("Target Location: " + treeObj.getTargetLocation3Node());
+
             }
         } else System.out.println("key was found and Comaparisons: "
                 + tree.getComparisons() + " null: " + (addFindHelperNode == null));
@@ -75,7 +81,8 @@ class TwoThree {
 
     }
 
-    private static void handleFind(int testFinkKey, tree treeObj) {
+    // final usage
+    public static void handleFind(int testFinkKey, tree treeObj) {
         node temp = treeObj.find(testFinkKey, treeObj.getRoot());
         if (treeObj.isEmpty(treeObj.getRoot())) System.out.println("empty root");
 //        if (temp == null) System.out.println("empty root");
@@ -92,7 +99,8 @@ class TwoThree {
         }
     }
 
-    private static void testhandleFind(tree treeObj, int testFinkKey) {
+    // testing purposes
+    public static void testhandleFind(tree treeObj, int testFinkKey) {
         node temp = treeObj.find(testFinkKey, treeObj.getRoot());
         if (treeObj.isEmpty(treeObj.getRoot())) System.out.println("empty root");
         else if (temp.is3node()) {
@@ -106,7 +114,7 @@ class TwoThree {
         }
     }
 
-    private static tree testTreeStep7() {
+    public static tree testTreeStep7() {
         tree testTree = new t23Tree();
         node troot = new t23_2Node_Internal();
         node l1childright = new t23_2Node_Internal();
@@ -147,7 +155,7 @@ class TwoThree {
         return testTree;
     }
 
-    private static tree testTreeStep6() {
+    public static tree testTreeStep6() {
         tree testTree = new t23Tree();
         node troot = new t23_3Node_Internal();
         node trchild = new t23_3Node_Leaf();

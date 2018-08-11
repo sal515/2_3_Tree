@@ -3,17 +3,17 @@
   <ID>JAVA</ID>
   <OriginalElement>tree</OriginalElement>
   <nodes>
-    <node x="3.0" y="697.0">t23Tree</node>
-    <node x="0.0" y="0.0">tree</node>
+    <node x="0.0" y="544.0">t23Tree</node>
+    <node x="66.0" y="0.0">tree</node>
   </nodes>
   <notes />
   <edges>
     <edge source="t23Tree" target="tree">
-      <point x="0.0" y="-102.5" />
-      <point x="0.0" y="323.5" />
+      <point x="0.0" y="-157.5" />
+      <point x="0.0" y="247.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.7539719626168225" x="393.6531737485333" y="494.27408000121807" />
+  <settings layout="Hierarchic Group" zoom="1.0083333333333333" x="108.83865951563655" y="455.49693169616285" />
   <SelectedNodes>
     <node>tree</node>
   </SelectedNodes>
@@ -21,6 +21,7 @@
     <Category>Fields</Category>
     <Category>Constructors</Category>
     <Category>Methods</Category>
+    <Category>Properties</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
