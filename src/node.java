@@ -20,7 +20,7 @@ public abstract class node {
     // ====================== Undefined overridden  functions ===================================
     // ====================== Downcasting checks are done maually ===================================
 
-    boolean is3node() {
+     boolean is3node() {
         return false;
     }
 

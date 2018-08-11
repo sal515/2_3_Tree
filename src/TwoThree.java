@@ -1,222 +1,81 @@
-import inputManagerPackage.inputManager;
-import inputManagerPackage.operationsQueue;
+import inputManagerPackage.*;
 
 class TwoThree {
-
     public static void main(String[] args) {
+        String fileName;
+        int traversalStep;
 
+        if (args.length != 0) {
+            fileName = args[0];
+            traversalStep = Integer.parseInt(args[1]);
+            // System.out.println(fileName + " " + traversalStep);
+            operationsQueue operationsQueueObj = inputManager.instructionExtractor(fileName);
 
+            // Processing all the inputs from the test file into a Queue for easier handling of the instructions
+            // initializing instructions object to hold the instruction values
+            instructions instruction = null;
+            // initializing 2-3 Tree object
+            tree treeObj = new t23Tree();
+            // iterating through all the Instructions found in the text file
+            while (!operationsQueueObj.isEmpty()) {
+                instruction = operationsQueueObj.denqueue();
+                // skip the char 'n' is found as the operator. n indicates null.
+                if (instruction.getOperator() != 'n') {
+                    if (instruction.getOperator() == 'a' || instruction.getOperator() == 'A') {
+                        treeObj.add(instruction.getKey(), treeObj.getRoot(), treeObj);
+                        treeObj.instructionCounterIncrement();
+                    } else if (instruction.getOperator() == 'f' || instruction.getOperator() == 'F') {
+                        treeObj.find(instruction.getKey(), treeObj.getRoot());
+                        treeObj.findInstructionCounterIncrement();
+                        treeObj.instructionCounterIncrement();
+                    } else if (instruction.getOperator() == 'r' || instruction.getOperator() == 'R') {
+                        treeObj.remove(instruction.getKey());
+                        treeObj.instructionCounterIncrement();
+                    } else {
+                        System.out.print(instruction.getOperator() + ": Is not a recognized instruction operator. Please choose between a, f or r");
+                    }
+                    // Check the instructions for the tree
+//                    System.out.println(instruction.getOperator() + " " + instruction.getKey());
+                }
 
+                printt23PreorderTraversal(treeObj, traversalStep);
+            }
+            t23output(treeObj, traversalStep);
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        operationsQueue operationsQueueObj = inputManager.instructionExtractor("test.txt");
-//        inputManagerPackage.inputManager.testPrintAllChar("test.txt");
-
-//        inputManagerPackage.operationsQueue operationsQueueObj = inputManagerPackage.inputManager.instructionExtractor("OperationsOLD.txt");
-//        inputManagerPackage.inputManager.testPrintAllChar("OperationsOLD.txt");
 
 // testing with manual tree made by me -- from the assignment provided example
-        tree treeObj;
-        treeObj = testTreeStep6();
+//        tree treeObj;
+//        treeObj = testTreeStep6();
 //        treeObj = testTreeStep7();
-        treeObj.preOrderTraverse(treeObj.getRoot());
-        System.out.println();
+//        treeObj.preOrderTraverse(treeObj.getRoot());
+//        System.out.println();
 
 // testing add function
-        tree testAddtree = new t23Tree();
-        int findVal = 901;
-        buildAsstree(testAddtree);
-        t23output(testAddtree, 6);
+//        tree testAddtree = new t23Tree();
+//        int findVal = 901;
+//        buildAsstree(testAddtree);
+//        t23output(testAddtree, 6);
         int unnecessary = 9999;
-// testing add - find helper function - target node locator
-//        node addFindHelperNode = treeObj.addFindHelp(findVal, treeObj.getRoot(), testAddtree);
-//        checkAddFindHelper(treeObj, addFindHelperNode);
 
+    }
 
-// testing how to recognize the value found
-//        int testFinkKey = 900;
-//        testhandleFind(treeObj, testFinkKey);
-//        handleFind(testFinkKey, treeObj);
-
-
-// random checks - to learn theory - unrelated to assignment
-//        testClass.charExtractor("test.txt", operationsQueueObj);
-//        testClass.charExtractor("Operations.txt");
-//        testClass.charExtractor("OperationsOLD.txt");
-
+    private static void printt23PreorderTraversal(tree treeobj, int stepNumber) {
+        if (stepNumber == treeobj.getInstructionsCounter()) {
+            System.out.print("Pre-order traversal after step " + stepNumber + ": ");
+            treeobj.preOrderTraverse(treeobj.getRoot());
+            System.out.print(" ");
+        }
     }
 
     private static void t23output(tree treeObj, int stepNumber) {
         System.out.print(
-                treeObj.getThreeNodeCounter() + " Three Nodes Created " +
+                treeObj.getComparisons() + " Comparisons Made " +
+                        treeObj.getThreeNodeCounter() + " Three Nodes Created " +
                         treeObj.getAddInstructionCounter() + " add operations " +
                         treeObj.getFindInstructionCounter() + " find operations " +
-                        treeObj.getRemoveInstructionCounter() + " remove operations " +
-                        "Pre-order traversal after step " + stepNumber + ": "
+                        treeObj.getRemoveInstructionCounter() + " remove operations "
         );
-        treeObj.preOrderTraverse(treeObj.getRoot());
-
+//        treeObj.preOrderTraverse(treeObj.getRoot());
     }
-
-    private static void t23outputTest(tree testAddtree) {
-        System.out.print(testAddtree.getThreeNodeCounter());
-        System.out.println(testAddtree.getAddInstructionCounter());
-        System.out.println(testAddtree.getFindInstructionCounter());
-        System.out.println(testAddtree.getRemoveInstructionCounter());
-        testAddtree.preOrderTraverse(testAddtree.getRoot());
-    }
-
-    private static void buildAsstree(tree testAddtree) {
-        testAddtree.add(280, testAddtree.getRoot(), testAddtree);
-        testAddtree.add(563, testAddtree.getRoot(), testAddtree);
-        testAddtree.add(82, testAddtree.getRoot(), testAddtree);
-        testAddtree.add(529, testAddtree.getRoot(), testAddtree);
-        testAddtree.add(500, testAddtree.getRoot(), testAddtree);
-        testAddtree.add(900, testAddtree.getRoot(), testAddtree);
-        testAddtree.add(794, testAddtree.getRoot(), testAddtree);
-        t23Tree.findInstructionCounterIncrement();
-        testAddtree.find(563, testAddtree.getRoot());
-    }
-
-    // testing purposes
-    public static void checkAddFindHelper(tree treeObj, node addFindHelperNode) {
-        if (!(addFindHelperNode == null)) {
-            if (addFindHelperNode.is3node()) {
-                System.out.println("Target Node with key1: " + addFindHelperNode.getKey1() + " key2 " +
-                        addFindHelperNode.getKey2() + " comparisons : " + tree.getComparisons());
-                System.out.println("3-node: " + addFindHelperNode.is3node());
-                System.out.println("Target Location: " + treeObj.getTargetLocation3Node());
-            } else {
-                System.out.println("Target Node with key: " + addFindHelperNode.getKey1() +
-                        " comparisons : " + tree.getComparisons());
-                System.out.println("3-node: " + addFindHelperNode.is3node());
-                System.out.println("Target Location: " + treeObj.getTargetLocation3Node());
-
-            }
-        } else System.out.println("key was found and Comaparisons: "
-                + tree.getComparisons() + " null: " + (addFindHelperNode == null));
-
-
-    }
-
-    // final usage
-    public static void handleFind(int testFinkKey, tree treeObj) {
-        node temp = treeObj.find(testFinkKey, treeObj.getRoot());
-        if (treeObj.isEmpty(treeObj.getRoot())) System.out.println("empty root");
-//        if (temp == null) System.out.println("empty root");
-        else if (temp.is3node()) {
-            if (temp != null && treeObj.isKey2Find())
-                System.out.println("Found key2: " + temp.getKey2() + " comparisons : " + tree.getComparisons());
-            else if (temp != null && !treeObj.isKey2Find())
-                System.out.println("Found key1: " + temp.getKey1() + " comparisons : " + tree.getComparisons());
-            else System.out.println("not found");
-        } else {
-            if (temp != null) System.out.println("Found key: " +
-                    temp.getKey1() + " comparisons : " + tree.getComparisons());
-            else System.out.println("not found");
-        }
-    }
-
-    // testing purposes
-    public static void testhandleFind(tree treeObj, int testFinkKey) {
-        node temp = treeObj.find(testFinkKey, treeObj.getRoot());
-        if (treeObj.isEmpty(treeObj.getRoot())) System.out.println("empty root");
-        else if (temp.is3node()) {
-            if (temp != null) System.out.println("Found key1: " + temp.getKey1() + " key2 " +
-                    temp.getKey2() + " comparisons : " + tree.getComparisons());
-            else System.out.println("not found");
-        } else {
-            if (temp != null) System.out.println("Found key1: " +
-                    temp.getKey1() + " comparisons : " + tree.getComparisons());
-            else System.out.println("not found");
-        }
-    }
-
-    public static tree testTreeStep7() {
-        tree testTree = new t23Tree();
-        node troot = new t23_2Node_Internal();
-        node l1childright = new t23_2Node_Internal();
-        node l1childleft = new t23_2Node_Internal();
-        node l2childrightl1 = new t23_2Node_Leaf();
-        node l2childleftl1 = new t23_2Node_Leaf();
-        node l2childleftl2 = new t23_2Node_Leaf();
-        node l2childrightl2 = new t23_2Node_Leaf();
-        // setting root
-        testTree.setRoot(troot);
-        testTree.getRoot().setKey1(529);
-        testTree.getRoot().setParent(null);
-        // setting leftchild of root
-        testTree.getRoot().setLeftChild(l1childleft);
-        testTree.getRoot().getLeftChild().setKey1(280);
-        testTree.getRoot().getLeftChild().setParent(testTree.getRoot());
-        // setting rightchild of root
-        testTree.getRoot().setRightChild(l1childright);
-        testTree.getRoot().getRightChild().setKey1(794);
-        testTree.getRoot().getRightChild().setParent(testTree.getRoot());
-        // setting leftchild of leftchild of root
-        testTree.getRoot().getLeftChild().setLeftChild(l2childleftl1);
-        testTree.getRoot().getLeftChild().getLeftChild().setKey1(82);
-        testTree.getRoot().getLeftChild().getLeftChild().setParent(testTree.getRoot().getLeftChild());
-        // setting rightchild of left child of root
-        testTree.getRoot().getLeftChild().setRightChild(l2childrightl1);
-        testTree.getRoot().getLeftChild().getRightChild().setKey1(500);
-        testTree.getRoot().getLeftChild().getRightChild().setParent(testTree.getRoot().getLeftChild());
-        // setting leftchild of rightchild of root
-        testTree.getRoot().getRightChild().setLeftChild(l2childleftl2);
-        testTree.getRoot().getRightChild().getLeftChild().setKey1(563);
-        testTree.getRoot().getRightChild().getLeftChild().setParent(testTree.getRoot().getRightChild());
-        // setting rightchild of rightchild of root
-        testTree.getRoot().getRightChild().setRightChild(l2childrightl2);
-        testTree.getRoot().getRightChild().getRightChild().setKey1(900);
-        testTree.getRoot().getRightChild().getRightChild().setParent(testTree.getRoot().getRightChild());
-
-        return testTree;
-    }
-
-    public static tree testTreeStep6() {
-        tree testTree = new t23Tree();
-        node troot = new t23_3Node_Internal();
-        node trchild = new t23_3Node_Leaf();
-        node tmChild = new t23_2Node_Leaf();
-        node tlchild = new t23_2Node_Leaf();
-        testTree.setRoot(troot);
-        testTree.getRoot().setKey1(280);
-        testTree.getRoot().setKey2(529);
-        testTree.getRoot().setParent(null);
-        testTree.getRoot().setLeftChild(tlchild);
-        testTree.getRoot().getLeftChild().setKey1(82);
-        testTree.getRoot().getLeftChild().setParent(testTree.getRoot());
-        testTree.getRoot().setRightChild(trchild);
-        testTree.getRoot().getRightChild().setKey1(563);
-        testTree.getRoot().getRightChild().setKey2(900);
-        testTree.getRoot().getRightChild().setParent(testTree.getRoot());
-        testTree.getRoot().setMiddleChild(tmChild);
-        testTree.getRoot().getMiddleChild().setKey1(500);
-        testTree.getRoot().getMiddleChild().setParent(testTree.getRoot());
-
-        return testTree;
-
-    }
-
 }

@@ -19,11 +19,11 @@ public class operationsQueue {
         queue = new instructions[queueSize];
     }
 
-    boolean isEmpty() {
+    public boolean isEmpty() {
         return (head == tail);
     }
 
-    boolean isFull() {
+    public boolean isFull() {
         return (tail == queue.length);
     }
 

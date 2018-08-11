@@ -12,6 +12,8 @@ abstract class tree {
     private static int findInstructionCounter = 0;
     private static int removeInstructionCounter = 0;
     private static int threeNodeCounter = 0;
+    private static int instructionsCounter = 0;
+
 
     // eg. of a 3node
     // keys are:                10 20
@@ -135,6 +137,17 @@ abstract class tree {
         tree.setThreeNodeCounter(tree.getThreeNodeCounter() + 1);
     }
 
+    public static int getInstructionsCounter() {
+        return instructionsCounter;
+    }
+
+    public static void setInstructionsCounter(int instructionsCounter) {
+        tree.instructionsCounter = instructionsCounter;
+    }
+
+    public static void instructionCounterIncrement() {
+        tree.setInstructionsCounter(tree.getInstructionsCounter() + 1);
+    }
 
     // ====================== getters and setters ===================================
 
