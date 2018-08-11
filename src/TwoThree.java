@@ -20,8 +20,9 @@ class TwoThree {
 
 // testing with manual tree made by me -- from the assignment provided example
         tree treeObj;
-        treeObj = testTreeStep6();
+//        treeObj = testTreeStep6();
 //        treeObj = testTreeStep7();
+
 
 // testing add function
         tree testAddtree = new t23Tree();
@@ -33,11 +34,11 @@ class TwoThree {
         testAddtree.addHelp(500, testAddtree.getRoot(), testAddtree);
 
 
+        int unnecessary = 9999;
 // testing add - find helper function - target node locator
 //        node addFindHelperNode = treeObj.addFindHelp(findVal, treeObj.getRoot(), testAddtree);
 //        checkAddFindHelper(treeObj, addFindHelperNode);
 
-        int unnecessary = 9999;
 
 // testing how to initialize nodes easily
 //        node parent = new t23_3Node_Internal();

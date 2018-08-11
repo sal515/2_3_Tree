@@ -7,8 +7,6 @@ abstract class tree {
 
     private node root = null;
 
-    private static int treeSize = 0;
-
     private stack stackObj = null;
 
     private boolean isKey2Find = false;     // only used for find method
@@ -29,7 +27,6 @@ abstract class tree {
 
     tree() {
         root = null;
-        treeSize = 0;
         stackObj = null;
         isKey2Find = false;
     }
@@ -62,14 +59,6 @@ abstract class tree {
 
     public void setRoot(node root) {
         this.root = root;
-    }
-
-    public static void setTreeSize(int treeSize) {
-        tree.treeSize = treeSize;
-    }
-
-    public static int getTreeSize() {
-        return treeSize;
     }
 
     public void setStackObj(stack stackObj) {

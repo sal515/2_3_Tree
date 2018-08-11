@@ -1,193 +1,5 @@
 public class t23Tree extends tree {
 
-    // ====================== Member variables ===================================
-
-    // node root
-    // int size
-    // stack stackObj
-
-    // ====================== Member variables ===================================
-
-
-    // ====================== Member functions ===================================
-
-
-    // ====================== node creating function ===================================
-
-    public node create2NodeLeaf(int key1, node parent, int childPos) {
-        node newNode = new t23_2Node_Leaf();
-        newNode.setKey1(key1);
-        newNode.setParent(parent);
-        newNode.setChildPos(childPos);
-        return newNode;
-    }
-
-    public node create2NodeInternal(int key1, node parent,
-                                    node left, node right, int childPos) {
-        node newNode = new t23_2Node_Internal();
-        newNode.setKey1(key1);
-        newNode.setLeftChild(left);
-        newNode.setRightChild(right);
-        newNode.setParent(parent);
-        newNode.setChildPos(childPos);
-        return newNode;
-    }
-
-    public node create3NodeLeaf(int key1, int key2, node parent, int childPos) {
-        node newNode = new t23_3Node_Leaf();
-        newNode.setKey1(key1);
-        newNode.setKey2(key2);
-        newNode.setParent(parent);
-        newNode.setChildPos(childPos);
-        return newNode;
-    }
-
-    public node create3NodeInternal(int key1, int key2, node parent,
-                                    node left, node middle, node right, int childPos) {
-        node newNode = new t23_3Node_Internal();
-        newNode.setKey1(key1);
-        newNode.setKey2(key2);
-        newNode.setLeftChild(left);
-        newNode.setRightChild(right);
-        newNode.setMiddleChild(middle);
-        newNode.setParent(parent);
-        newNode.setChildPos(childPos);
-        return newNode;
-    }
-
-//    public node create4NodeInternal(int key1, int key2, int key3, node parent,
-//                                    node left, node middle, node right, node fourthTemp) {
-//        node newNode = new t23_temp4NodeInternal();
-//        newNode.setKey1(key1);
-//        newNode.setKey2(key2);
-//        newNode.setKey3(key3);
-//        newNode.setLeftChild(left);
-//        newNode.setRightChild(right);
-//        newNode.setMiddleChild(middle);
-//        newNode.setFourthChildTemp(fourthTemp);
-//        newNode.setParent(parent);
-//        return newNode;
-//    }
-//
-//    public node create4NodeLeaf(int key1, int key2, int key3, node parent) {
-//        node newNode = new t23_temp4NodeLeaf();
-//        newNode.setKey1(key1);
-//        newNode.setKey2(key2);
-//        newNode.setKey3(key3);
-//        newNode.setParent(parent);
-//        return newNode;
-//    }
-
-    // ====================== node creating function ===================================
-
-
-    // ====================== node convert and build functions ===================================
-
-//    // making 2 node root from null
-//    public node build_2Node_RootLeaf(int key) {
-//        node newNode = create2NodeLeaf(key, null);
-//        return newNode;
-//    }
-
-//    // converting to a 3 node leaf from 2 node leaf
-//    public node convert_3NodeL_from_2NodeL(int key, int insertKeyPos, node twoNode) {
-//        // if insert key position is 0 , new key goes on left
-//        node threeNode = null;
-//        if (insertKeyPos == 0) {
-//            threeNode = create3NodeLeaf(key, twoNode.getKey1(), twoNode.getParent());
-//        }
-//        // if insert key position is other than 0, new key goes on the right
-//        else threeNode = create3NodeLeaf(twoNode.getKey1(), key, twoNode.getParent());
-//        twoNode = null;
-//        return threeNode;
-//    }
-//
-//    // converting to a 3 node internal from 2 node internal
-//    public node convert_3NodeI_from_2NodeI(int key, int insertKeyPos, node twoNode) {
-//        // if insert key position is 0 , new key goes on left
-//        node threeNode = null;
-//        if (insertKeyPos == 0) {
-//            threeNode = create3NodeInternal(key, twoNode.getKey1(), twoNode.getParent(), twoNode.getLeftChild(),
-//                    twoNode.getMiddleChild(), twoNode.getRightChild());
-//        } else if (insertKeyPos == 1) {
-//
-//        }
-//        // if insert key position is other than 0, new key goes on the right
-//        else {
-//            threeNode = create3NodeLeaf(twoNode.getKey1(), key, twoNode.getParent());
-//        }
-//        twoNode = null;
-//        return threeNode;
-//    }
-
-    // ====================== node building functions ===================================
-
-    // ====================== split and promote functions ===================================
-
-
-    // splitting 3 node root to 3x new 2 node : returns parent (2N) , left and right children (2N)
-    public node split_3NodeLeaf(int key, int insertKeyPos, node threeNode) {
-
-        node retNode = null;
-
-        // insert key is smalller than key1
-        if (insertKeyPos == 0) {
-            retNode = create2NodeInternal(threeNode.getKey1(), threeNode.getParent(),
-                    null, null, -1);
-            retNode.setLeftChild(create2NodeLeaf(key, retNode, 0));
-            retNode.setRightChild(create2NodeLeaf(threeNode.getKey2(), retNode, 2));
-        }
-        // insert key is larger than key1 and smaller than key2
-        else if (insertKeyPos == 1) {
-            retNode = create2NodeInternal(
-                    key, threeNode.getParent(),
-                    null, null, -1);
-
-            retNode.setLeftChild(create2NodeLeaf(threeNode.getKey1(), retNode, 0));
-            retNode.setRightChild(create2NodeLeaf(threeNode.getKey2(), retNode, 2));
-
-        }
-        // insert key is larger than key2
-        else if (insertKeyPos == 2) {
-            retNode = create2NodeInternal(
-                    threeNode.getKey2(), threeNode.getParent(),
-                    null, null, -1);
-            retNode.setLeftChild(create2NodeLeaf(threeNode.getKey1(), retNode, 0));
-            retNode.setRightChild(create2NodeLeaf(key, retNode, 2));
-        }
-
-        return retNode;
-
-        // What the positions mean int the return array
-//        int parentPos = 0;
-//        int leftChildPos = 1;
-//        int rightChildPos = 2;
-//
-//        node newNodes = new t23_2Node_Leaf();
-
-//        // if insert key position is 0 , new key is left child
-//        if (insertKeyPos == 0) {
-//            newNodes[parentPos] = create2NodeLeaf(threeNode.getKey1(), null);
-//            newNodes[leftChildPos] = create2NodeLeaf(key, newNodes[parentPos]);
-//            newNodes[rightChildPos] = create2NodeLeaf(threeNode.getKey2(), newNodes[parentPos]);
-//        }
-//        // if insert key position is 1 , new key is middle child
-//        else if (insertKeyPos == 1) {
-//            newNodes[parentPos] = create2NodeLeaf(key, null);
-//            newNodes[leftChildPos] = create2NodeLeaf(threeNode.getKey1(), newNodes[parentPos]);
-//            newNodes[rightChildPos] = create2NodeLeaf(threeNode.getKey2(), newNodes[parentPos]);
-//        }
-//        // if insert key position is 2 or o.w. , new key is right child
-//        else {
-//            newNodes[parentPos] = create2NodeLeaf(threeNode.getKey2(), null);
-//            newNodes[leftChildPos] = create2NodeLeaf(threeNode.getKey1(), newNodes[parentPos]);
-//            newNodes[rightChildPos] = create2NodeLeaf(key, newNodes[parentPos]);
-//        }
-//        threeNode = null;
-//        return newNodes;
-    }
-
-    // ====================== split and promote functions ===================================
 
     @Override
     boolean addHelp(int val, node rt, tree treeObj) {
@@ -233,18 +45,8 @@ public class t23Tree extends tree {
                         temp = create3NodeLeaf(targetNode.getKey1(), val, targetNode.getParent(),
                                 targetNode.getChildPos());
                     }
-                    // setting the left child
-                    if (targetNode.getChildPos() == 0) {
-                        targetNode.getParent().setLeftChild(temp);
-                    }
-                    // setting the right child
-                    else if (targetNode.getChildPos() == 2) {
-                        targetNode.getParent().setRightChild(temp);
-                    }
-                    // setting the middle child
-                    else {
-                        targetNode.getParent().setMiddleChild(temp);
-                    }
+                    setTargetNodePtr(targetNode, temp);
+
                 }
 
             }
@@ -257,7 +59,10 @@ public class t23Tree extends tree {
                 }
                 // the 3-node leaf is not a root
                 else {
-                    targetNode = split_3NodeLeaf(val, firstPosition, targetNode);
+                    setTargetNodePtr(targetNode,
+                            split_3NodeLeaf(val, firstPosition, targetNode));
+
+                    promote();
                 }
 
 
@@ -321,6 +126,62 @@ public class t23Tree extends tree {
 
     }
 
+
+    // ====================== Member functions ===================================
+
+
+    // ====================== split and promote functions ===================================
+
+    // splitting 3 node root to 3x new 2 node : returns parent (2N) , left and right children (2N)
+
+    public node split_3NodeLeaf(int key, int insertKeyPos, node threeNode) {
+
+        node retNode = null;
+
+        // insert key is smalller than key1
+        if (insertKeyPos == 0) {
+            retNode = create2NodeInternal(threeNode.getKey1(), threeNode.getParent(),
+                    null, null, -1);
+            retNode.setLeftChild(create2NodeLeaf(key, retNode, 0));
+            retNode.setRightChild(create2NodeLeaf(threeNode.getKey2(), retNode, 2));
+        }
+        // insert key is larger than key1 and smaller than key2
+        else if (insertKeyPos == 1) {
+            retNode = create2NodeInternal(
+                    key, threeNode.getParent(),
+                    null, null, -1);
+
+            retNode.setLeftChild(create2NodeLeaf(threeNode.getKey1(), retNode, 0));
+            retNode.setRightChild(create2NodeLeaf(threeNode.getKey2(), retNode, 2));
+
+        }
+        // insert key is larger than key2
+        else if (insertKeyPos == 2) {
+            retNode = create2NodeInternal(
+                    threeNode.getKey2(), threeNode.getParent(),
+                    null, null, -1);
+            retNode.setLeftChild(create2NodeLeaf(threeNode.getKey1(), retNode, 0));
+            retNode.setRightChild(create2NodeLeaf(key, retNode, 2));
+        }
+        return retNode;
+    }
+
+    void promote() {
+
+
+    }
+
+
+    // ?????????????  splitting 3 node root to 3x new 2 node : returns parent (2N) , left and right children (2N)
+    node split_3NodeInternal(int key, int insertKeyPos, node threeNode) {
+        node retNode = null;
+
+        return retNode;
+    }
+
+
+    // ====================== split and promote functions ===================================
+
     // returns null if insert value is found, else returns the target node
 
     @Override
@@ -348,6 +209,7 @@ public class t23Tree extends tree {
                     setTargetLocation3Node(0);
                     return rt;
                 } else {
+                    setChildPos(rt, 0);
                     return addFindHelp(val, rt.getLeftChild(), treeObj);
                 }
                 // going right of key1 - if insertKey greater then key1
@@ -360,6 +222,7 @@ public class t23Tree extends tree {
                         setTargetLocation3Node(1);
                         return rt;
                     } else {
+                        setChildPos(rt, 1);
                         return addFindHelp(val, rt.getMiddleChild(), treeObj);
                     }
                 }
@@ -370,6 +233,7 @@ public class t23Tree extends tree {
                         setTargetLocation3Node(2);
                         return rt;
                     } else {
+                        setChildPos(rt, 2);
                         return addFindHelp(val, rt.getRightChild(), treeObj);
                     }
                 }
@@ -396,6 +260,7 @@ public class t23Tree extends tree {
                     setTargetLocation3Node(0);
                     return rt;
                 } else {
+                    setChildPos(rt, 0);
                     return addFindHelp(val, rt.getLeftChild(), treeObj);
                 }
                 // going right of key1 - if insertKey greater then key1
@@ -405,6 +270,7 @@ public class t23Tree extends tree {
                     setTargetLocation3Node(1);
                     return rt;
                 } else {
+                    setChildPos(rt, 2);
                     return addFindHelp(val, rt.getRightChild(), treeObj);
                 }
             }
@@ -414,6 +280,21 @@ public class t23Tree extends tree {
                 setisKey2Find(false);
                 return null;
             }
+        }
+    }
+
+    void setChildPos(node rt, int pos) {
+        // set left child == 0
+        if (pos == 0) {
+            rt.getLeftChild().setChildPos(pos);
+        }
+        // set middle child == 1
+        else if (pos == 1) {
+            rt.getMiddleChild().setChildPos(pos);
+        }
+        // set right child == 2
+        else {
+            rt.getRightChild().setChildPos(pos);
         }
     }
 
@@ -438,6 +319,22 @@ public class t23Tree extends tree {
         return rt == null;
     }
 
+    private void setTargetNodePtr(node targetNode, node temp) {
+        // setting the left child
+        if (targetNode.getChildPos() == 0) {
+            targetNode.getParent().setLeftChild(temp);
+        }
+        // setting the right child
+        else if (targetNode.getChildPos() == 2) {
+            targetNode.getParent().setRightChild(temp);
+        }
+        // setting the middle child
+        else {
+            targetNode.getParent().setMiddleChild(temp);
+        }
+    }
+
+
     @Override
     node find(int val, node rt) {
         // in general - checkKey1 < checkKey2
@@ -454,22 +351,34 @@ public class t23Tree extends tree {
             // going Left of key1 - if insertKey less then key1
             if (val < checkKey1) {
                 comparisonsIncrement(1);
-                if (rt.isLeaf()) return null;
-                else return find(val, rt.getLeftChild());
+                if (rt.isLeaf()) {
+                    return null;
+                } else {
+                    setChildPos(rt, 0);
+                    return find(val, rt.getLeftChild());
+                }
                 // going right of key1 - if insertKey greater then key1
             } else if (val > checkKey1) {
                 comparisonsIncrement(2);
                 // going left of key2 - if insertKey less then key2
                 if (val < checkKey2) {
                     comparisonsIncrement(1);
-                    if (rt.isLeaf()) return null;
-                    else return find(val, rt.getMiddleChild());
+                    if (rt.isLeaf()) {
+                        return null;
+                    } else {
+                        setChildPos(rt, 1);
+                        return find(val, rt.getMiddleChild());
+                    }
                 }
                 // going right of key2 - if insertKey greater then key2
                 else if (val > checkKey2) {
                     comparisonsIncrement(2);
-                    if (rt.isLeaf()) return null;
-                    else return find(val, rt.getRightChild());
+                    if (rt.isLeaf()) {
+                        return null;
+                    } else {
+                        setChildPos(rt, 2);
+                        return find(val, rt.getRightChild());
+                    }
                 }
                 // key is the key2 of 3 node
                 else {
@@ -490,13 +399,21 @@ public class t23Tree extends tree {
             // going Left of key1 - if insertKey less then key1
             if (val < checkKey1) {
                 comparisonsIncrement(1);
-                if (rt.isLeaf()) return null;
-                else return find(val, rt.getLeftChild());
+                if (rt.isLeaf()) {
+                    return null;
+                } else {
+                    setChildPos(rt, 0);
+                    return find(val, rt.getLeftChild());
+                }
                 // going right of key1 - if insertKey greater then key1
             } else if (val > checkKey1) {
                 comparisonsIncrement(2);
-                if (rt.isLeaf()) return null;
-                else return find(val, rt.getRightChild());
+                if (rt.isLeaf()) {
+                    return null;
+                } else {
+                    setChildPos(rt, 2);
+                    return find(val, rt.getRightChild());
+                }
             }
             // key is the key1 of 2-node
             else {
@@ -507,6 +424,53 @@ public class t23Tree extends tree {
         }
     }
 
-
     // ====================== Member functions ===================================
+
+
+    // ====================== node creating function ===================================
+
+    public node create2NodeLeaf(int key1, node parent, int childPos) {
+        node newNode = new t23_2Node_Leaf();
+        newNode.setKey1(key1);
+        newNode.setParent(parent);
+        newNode.setChildPos(childPos);
+        return newNode;
+    }
+
+    public node create2NodeInternal(int key1, node parent,
+                                    node left, node right, int childPos) {
+        node newNode = new t23_2Node_Internal();
+        newNode.setKey1(key1);
+        newNode.setLeftChild(left);
+        newNode.setRightChild(right);
+        newNode.setParent(parent);
+        newNode.setChildPos(childPos);
+        return newNode;
+    }
+
+    public node create3NodeLeaf(int key1, int key2, node parent, int childPos) {
+        node newNode = new t23_3Node_Leaf();
+        newNode.setKey1(key1);
+        newNode.setKey2(key2);
+        newNode.setParent(parent);
+        newNode.setChildPos(childPos);
+        return newNode;
+    }
+
+    public node create3NodeInternal(int key1, int key2, node parent,
+                                    node left, node middle, node right, int childPos) {
+        node newNode = new t23_3Node_Internal();
+        newNode.setKey1(key1);
+        newNode.setKey2(key2);
+        newNode.setLeftChild(left);
+        newNode.setRightChild(right);
+        newNode.setMiddleChild(middle);
+        newNode.setParent(parent);
+        newNode.setChildPos(childPos);
+        return newNode;
+    }
+
+    // ====================== node creating function ===================================
+
+
 }
