@@ -1,4 +1,4 @@
-public abstract class node implements Cloneable {
+public abstract class node {
 
     // ====================== Member variables ===================================
 

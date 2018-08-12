@@ -1,46 +1,48 @@
 class TwoThree {
     public static void main(String[] args) {
 
-//        run_instructions(args);
+        // ============= Program execution functions
+
+        run_instructions(args);
+
+        // ============= Program execution functions
 
 
-/*
-        // test 2 levels of all 3 nodes
-        tree treeobj2 = new t23Tree();
-        testClass.allThreeNode2Leves(treeobj2);
-        testClass.orderTraversal(treeobj2.getRoot());
-        System.out.println();
-        treeobj2.add(302, treeobj2.getRoot(), treeobj2);
-        testClass.orderTraversal(treeobj2.getRoot());
+        // ================ Data collection and testing with random data sizes upto 100M
 
-*/
-        // test 3 levels of all 3 nodes
-        tree treeobj = new t23Tree();
-        testClass.allThreeNode3Leves(treeobj);
-        testClass.orderTraversal(treeobj.getRoot());
-        System.out.println();
+        testDataCollection();
+
+        // ================ Data collection and testing with random data sizes upto 100M
 
 
-        treeobj.add(5, treeobj.getRoot(), treeobj);
-//        treeobj.add(999, treeobj.getRoot(), treeobj);
-//        treeobj.add(126, treeobj.getRoot(), treeobj);
-        testClass.orderTraversal(treeobj.getRoot());
-
-//        testClass.graphicalTraversal(treeobj.getRoot());
-// testing with manual tree made by me -- from the assignment provided example
-//        tree treeObj;
-//        treeObj = testTreeStep6();
-//        treeObj = testTreeStep7();
-//        treeObj.preOrderTraverse(treeObj.getRoot());
-//        System.out.println();
-
-// testing add function
-//        tree testAddtree = new t23Tree();
-//        int findVal = 901;
-//        buildAsstree(testAddtree);
-//        t23output(testAddtree, 6);
         int unnecessary = 9999;
 
+    }
+
+    public static void testDataCollection() {
+        int size = (1000 * 40000);
+        int[] keyArr = new int[size];
+        keyArr = testClass.TestRandomInputs(size);
+        int counter = 0;
+        long durationStart = 0;
+        long durationEnd = 0;
+        long totalduration =0;
+
+        tree treeObj = new t23Tree();
+
+        durationStart = System.nanoTime();
+        while (counter < size) {
+            treeObj.add(keyArr[counter], treeObj.getRoot(), treeObj);
+            counter++;
+        }
+        durationEnd = System.nanoTime();
+        totalduration = durationEnd - durationStart;
+        System.out.println("comparisons:    " + treeObj.getComparisons());
+        System.out.println("three nodes craeted:    " + treeObj.getThreeNodeCounter());
+        System.out.println("size :      " + size);
+        System.out.println("total duration :    " + totalduration + "  ns");
+
+        System.out.println( treeObj.getComparisons() + "        " + treeObj.getThreeNodeCounter() + "        " + size + "        " + totalduration);
     }
 
     private static void run_instructions(String[] args) {
@@ -82,6 +84,17 @@ class TwoThree {
                 printt23PreorderTraversal(treeObj, traversalStep);
             }
             t23output(treeObj, traversalStep);
+            System.out.println();
+            System.out.print("Tree after Completion: ");
+
+
+            // ----------------------
+            // Test level print
+            testClass.orderTraversal(treeObj.getRoot());
+            // Test level print
+            // ----------------------
+
+
         }
     }
 
@@ -95,10 +108,10 @@ class TwoThree {
 
     private static void t23output(tree treeObj, int stepNumber) {
         System.out.print(
-                treeObj.getComparisons() + " Comparisons Made " +
-                        treeObj.getThreeNodeCounter() + " Three Nodes Created " +
-                        treeObj.getAddInstructionCounter() + " add operations " +
-                        treeObj.getFindInstructionCounter() + " find operations " +
+                treeObj.getComparisons() + " Comparisons Made <> " +
+                        treeObj.getThreeNodeCounter() + " Three Nodes Created <> " +
+                        treeObj.getAddInstructionCounter() + " add operations <> " +
+                        treeObj.getFindInstructionCounter() + " find operations <> " +
                         treeObj.getRemoveInstructionCounter() + " remove operations "
         );
 //        treeObj.preOrderTraverse(treeObj.getRoot());

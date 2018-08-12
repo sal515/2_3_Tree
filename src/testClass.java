@@ -1,6 +1,24 @@
+import java.util.Random;
+
 public class testClass {
+    // =========== Member variables ======================
     static int leftheight = 0;
     static int rightheight = 0;
+    // ----------------------------------------------
+
+
+    public static int[] TestRandomInputs(int size) {
+        Random objRandom = new Random();
+        int[] arr = new int[size];
+        for (int i = 0; i < size; i++) {
+            arr[i] = objRandom.nextInt(Integer.MAX_VALUE);
+        }
+        return arr;
+    }
+
+
+
+
 
     public static void orderTraversal(node rt) {
         int leftH = leftHeight(rt);
@@ -104,6 +122,17 @@ public class testClass {
 
     public static tree allThreeNode2Leves(tree treeobj) {
 
+//        usage-----------------------------
+
+//        // test 2 levels of all 3 nodes
+//        tree treeobj2 = new t23Tree();
+//        testClass.allThreeNode2Leves(treeobj2);
+//        testClass.orderTraversal(treeobj2.getRoot());
+//        System.out.println();
+//        treeobj2.add(302, treeobj2.getRoot(), treeobj2);
+//        testClass.orderTraversal(treeobj2.getRoot());
+
+
         // root
         treeobj.setRoot(((t23Tree) treeobj).create3NodeInternal(200, 400, null,
                 null, null, null, -1));
@@ -124,6 +153,19 @@ public class testClass {
 
 
     public static tree allThreeNode3Leves(tree treeobj) {
+        // usage ----------------------------
+//        */
+        // test 3 levels of all 3 nodes
+//        tree treeobj = new t23Tree();
+//        testClass.allThreeNode3Leves(treeobj);
+//        testClass.orderTraversal(treeobj.getRoot());
+//        System.out.println();
+//        treeobj.add(302, treeobj.getRoot(), treeobj);
+//        testClass.orderTraversal(treeobj.getRoot());
+
+        // usage ----------------------------
+
+
         // root
         treeobj.setRoot(((t23Tree) treeobj).create3NodeInternal(200, 400, null,
                 null, null, null, -1));
