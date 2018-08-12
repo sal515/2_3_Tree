@@ -1,10 +1,49 @@
-import inputManagerPackage.*;
-
 class TwoThree {
     public static void main(String[] args) {
+
+//        run_instructions(args);
+
+
+/*
+        // test 2 levels of all 3 nodes
+        tree treeobj2 = new t23Tree();
+        testClass.allThreeNode2Leves(treeobj2);
+        testClass.orderTraversal(treeobj2.getRoot());
+        System.out.println();
+        treeobj2.add(302, treeobj2.getRoot(), treeobj2);
+        testClass.orderTraversal(treeobj2.getRoot());
+
+*/
+        // test 3 levels of all 3 nodes
+        tree treeobj = new t23Tree();
+        testClass.allThreeNode3Leves(treeobj);
+        testClass.orderTraversal(treeobj.getRoot());
+        System.out.println();
+
+        treeobj.add(999, treeobj.getRoot(), treeobj);
+//        treeobj.add(126, treeobj.getRoot(), treeobj);
+        testClass.orderTraversal(treeobj.getRoot());
+
+//        testClass.graphicalTraversal(treeobj.getRoot());
+// testing with manual tree made by me -- from the assignment provided example
+//        tree treeObj;
+//        treeObj = testTreeStep6();
+//        treeObj = testTreeStep7();
+//        treeObj.preOrderTraverse(treeObj.getRoot());
+//        System.out.println();
+
+// testing add function
+//        tree testAddtree = new t23Tree();
+//        int findVal = 901;
+//        buildAsstree(testAddtree);
+//        t23output(testAddtree, 6);
+        int unnecessary = 9999;
+
+    }
+
+    private static void run_instructions(String[] args) {
         String fileName;
         int traversalStep;
-
         if (args.length != 0) {
             fileName = args[0];
             traversalStep = Integer.parseInt(args[1]);
@@ -42,22 +81,6 @@ class TwoThree {
             }
             t23output(treeObj, traversalStep);
         }
-
-
-// testing with manual tree made by me -- from the assignment provided example
-//        tree treeObj;
-//        treeObj = testTreeStep6();
-//        treeObj = testTreeStep7();
-//        treeObj.preOrderTraverse(treeObj.getRoot());
-//        System.out.println();
-
-// testing add function
-//        tree testAddtree = new t23Tree();
-//        int findVal = 901;
-//        buildAsstree(testAddtree);
-//        t23output(testAddtree, 6);
-        int unnecessary = 9999;
-
     }
 
     private static void printt23PreorderTraversal(tree treeobj, int stepNumber) {

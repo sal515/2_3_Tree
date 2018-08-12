@@ -1,7 +1,8 @@
-package inputManagerPackage;
-
-import java.io.*;
-//import java.util.Objects;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.LineNumberReader;
+import java.io.BufferedReader;
 
 public abstract class inputManager {
 

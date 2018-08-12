@@ -1,4 +1,4 @@
-public abstract class node {
+public abstract class node implements Cloneable {
 
     // ====================== Member variables ===================================
 
@@ -20,7 +20,7 @@ public abstract class node {
     // ====================== Undefined overridden  functions ===================================
     // ====================== Downcasting checks are done maually ===================================
 
-     boolean is3node() {
+    boolean is3node() {
         return false;
     }
 
@@ -57,6 +57,43 @@ public abstract class node {
     }
 
     public void setMiddleChild(node middleChild) {
+    }
+
+    public node nodeCopy(node in) {
+        node out = null;
+        if (in instanceof t23_2Node_Leaf) {
+            out = new t23_3Node_Leaf();
+            out.setKey1(in.getKey1());
+            out.setParent(in.getParent());
+            out.setChildPos(in.getChildPos());
+        }
+        if (in instanceof t23_2Node_Internal) {
+            out = new t23_2Node_Internal();
+            out.setKey1(in.getKey1());
+            out.setParent(in.getParent());
+            out.setChildPos(in.getChildPos());
+            out.setLeftChild(in.getLeftChild());
+            out.setRightChild(in.getRightChild());
+        }
+        if (in instanceof t23_3Node_Leaf) {
+            out = new t23_3Node_Leaf();
+            out.setKey1(in.getKey1());
+            out.setKey2(in.getKey2());
+            out.setParent(in.getParent());
+            out.setChildPos(in.getChildPos());
+        }
+        if (in instanceof t23_3Node_Internal) {
+            out = new t23_3Node_Internal();
+            out.setKey1(in.getKey1());
+            out.setKey2(in.getKey2());
+            out.setParent(in.getParent());
+            out.setChildPos(in.getChildPos());
+            out.setLeftChild(in.getLeftChild());
+            out.setMiddleChild(in.getMiddleChild());
+            out.setRightChild(in.getRightChild());
+
+        }
+        return out;
     }
 
     // ====================== undefined overridden  functions  ===================================

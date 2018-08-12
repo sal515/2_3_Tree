@@ -1,5 +1,3 @@
-package inputManagerPackage;
-
 public class operationsQueue {
     private final instructions[] queue;
     private int head;

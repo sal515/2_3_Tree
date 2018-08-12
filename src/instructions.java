@@ -1,5 +1,3 @@
-package inputManagerPackage;
-
 public class instructions {
     private char operator;
     private int key;

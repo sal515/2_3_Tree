@@ -1,5 +1,6 @@
 public class t23Tree extends tree {
 
+
     @Override
     boolean add(int val, node rt, tree treeObj) {
         addInstructionCounterIncrement();
@@ -158,6 +159,7 @@ public class t23Tree extends tree {
 
                 if (targetNode.getParent() != null) {
                     promote(targetNode.getParent(), treeObj);
+//                    promote(targetNode, treeObj);
                 }
             }
         }
@@ -166,7 +168,8 @@ public class t23Tree extends tree {
 
     //  splitting 3 node internal root to be able to
     // obsorb the 3-node leaf that was already split
-    node split_3NodeInternal(node targetNode, tree treeObj) {
+    void split_3NodeInternal(node targetNode, tree treeObj) {
+//        node targetNode = treeObj.getRoot().nodeCopy(target);
         node preserveTargetNodeParent = targetNode.getParent();
 //        node preserveTargetNodeGrandParent = targetNode.getParent().getParent();
         int preservePosition = targetNode.getParent().getChildPos();
@@ -202,7 +205,7 @@ public class t23Tree extends tree {
             if (treeObj.getRoot().isRoot(preserveTargetNodeParent)) {
                 treeObj.setRoot(tempNode1);
             } else {
-                setTargetNodePtr(preserveTargetNodeParent, tempNode1, preservePosition);
+                targetNode = setTargetNodePtr(preserveTargetNodeParent, tempNode1, preservePosition);
             }
         }
         // insertkey > parentKey1 && insertKey < parentKey2
@@ -241,7 +244,7 @@ public class t23Tree extends tree {
                 if (treeObj.getRoot().isRoot(preserveTargetNodeParent)) {
                     treeObj.setRoot(targetNode);
                 } else {
-                    setTargetNodePtr(preserveTargetNodeParent, targetNode, preservePosition);
+                    targetNode = setTargetNodePtr(preserveTargetNodeParent, targetNode, preservePosition);
                 }
             }
             // insertKey > parentKey2
@@ -271,11 +274,10 @@ public class t23Tree extends tree {
                 if (treeObj.getRoot().isRoot(preserveTargetNodeParent)) {
                     treeObj.setRoot(tempNode2);
                 } else {
-                    setTargetNodePtr(preserveTargetNodeParent, tempNode2, preservePosition);
+                    targetNode = setTargetNodePtr(preserveTargetNodeParent, tempNode2, preservePosition);
                 }
             }
         }
-        return tempNode1;
     }
 
 
@@ -308,7 +310,7 @@ public class t23Tree extends tree {
             targetNode.getParent().setRightChild(temp);
         }
         // setting the middle child
-        else {
+        else if (targetNode.getChildPos() == 1) {
             targetNode.getParent().setMiddleChild(temp);
         }
         return temp;

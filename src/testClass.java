@@ -1,7 +1,168 @@
 public class testClass {
+    static int leftheight = 0;
+    static int rightheight = 0;
+
+    public static void orderTraversal(node rt) {
+        int leftH = leftHeight(rt);
+        int rightH = rightHeight(rt);
+        int i;
+        if (leftH == rightH) {
+            for (i = 0; i <= leftH; i++) {
+                printTreeInLevels(rt, i);
+                System.out.println();
+            }
+        }
+    }
+
+    private static void printTreeInLevels(node rt, int i) {
+        if (rt == null) {
+            return;
+        }
+        if (rt.isLeaf()) {
+            if (rt.is3node()) {
+                System.out.print("|=> " + rt.getKey1() + " " + rt.getKey2() + " <=| ");
+            } else {
+                System.out.print("|=> " + rt.getKey1() + " <=| ");
+            }
+            return;
+        }
+        if (i == 1) {
+            if (rt.is3node()) {
+                System.out.print("|=> " + rt.getKey1() + " " + rt.getKey2() + " <=| ");
+            } else {
+                System.out.print("|=> " + rt.getKey1() + " <=| ");
+            }
+        } else if (i > 1) {
+            if (rt.is3node()) {
+                printTreeInLevels(rt.getLeftChild(), i - 1);
+                printTreeInLevels(rt.getMiddleChild(), i - 1);
+                printTreeInLevels(rt.getRightChild(), i - 1);
+            } else {
+                printTreeInLevels(rt.getLeftChild(), i - 1);
+                printTreeInLevels(rt.getRightChild(), i - 1);
+            }
+        }
+    }
+
+    public static int leftHeight(node rt) {
+        if (rt == null) return 0;
+        if (rt.isLeaf()) {
+            leftheight++;
+        } else {
+            leftheight++;
+            leftHeight(rt.getLeftChild());
+        }
+        return leftheight;
+    }
+
+    public static int rightHeight(node rt) {
+        if (rt == null) return 0;
+        if (rt.isLeaf()) {
+            rightheight++;
+        } else {
+            rightheight++;
+            rightHeight(rt.getRightChild());
+        }
+        return rightheight;
+    }
+
+    public static void graphicalTraversal(node rt) {
+        if (rt == null) return;
+        if (rt.isLeaf()) printGraphicaltree(rt);
+        else if (!rt.is3node()) {
+            printGraphicaltree(rt);
+            graphicalTraversal(rt.getLeftChild());
+            graphicalTraversal(rt.getRightChild());
+
+        } else {
+            printGraphicaltree(rt);
+            graphicalTraversal(rt.getLeftChild());
+            graphicalTraversal(rt.getMiddleChild());
+            graphicalTraversal(rt.getRightChild());
+        }
+    }
+
+    private static void printGraphicaltree(node rt) {
+        if (rt.is3node()) {
+            if (rt.isRoot(rt)) {
+                System.out.println("rt-" + rt.getKey1() + " " + rt.getKey2() + "-rt ");
+            } else if (rt.isLeaf()) {
+                System.out.println("lf-" + rt.getKey1() + " " + rt.getKey2() + "-lf ");
+            } else {
+                System.out.print(rt.getKey1() + " " + rt.getKey2() + " ");
+            }
+        } else {
+            if (rt.isRoot(rt)) {
+                System.out.println("rt-" + rt.getKey1() + "-rt ");
+            } else if (rt.isLeaf()) {
+                System.out.println("lf-" + rt.getKey1() + "-lf ");
+            } else {
+                System.out.print(rt.getKey1() + " ");
+            }
+        }
+    }
+
+    public static tree allThreeNode2Leves(tree treeobj) {
+
+        // root
+        treeobj.setRoot(((t23Tree) treeobj).create3NodeInternal(200, 400, null,
+                null, null, null, -1));
+        // leftchild - root
+        treeobj.getRoot().setLeftChild(((t23Tree) treeobj).create3NodeLeaf(100, 150, treeobj.getRoot(),
+                 0));
+        // middlechild - root
+        treeobj.getRoot().setMiddleChild(((t23Tree) treeobj).create3NodeLeaf(250, 350, treeobj.getRoot(),
+                 1));
+        // rightchild - root
+        treeobj.getRoot().setRightChild(((t23Tree) treeobj).create3NodeLeaf(500, 800, treeobj.getRoot(),
+                 2));
 
 
-    private static void t23outputTest(tree testAddtree) {
+
+        return treeobj;
+    }
+
+
+    public static tree allThreeNode3Leves(tree treeobj) {
+        // root
+        treeobj.setRoot(((t23Tree) treeobj).create3NodeInternal(200, 400, null,
+                null, null, null, -1));
+        // leftchild - root
+        treeobj.getRoot().setLeftChild(((t23Tree) treeobj).create3NodeInternal(100, 150, treeobj.getRoot(),
+                null, null, null, 0));
+        // middlechild - root
+        treeobj.getRoot().setMiddleChild(((t23Tree) treeobj).create3NodeInternal(250, 350, treeobj.getRoot(),
+                null, null, null, 1));
+        // rightchild - root
+        treeobj.getRoot().setRightChild(((t23Tree) treeobj).create3NodeInternal(500, 800, treeobj.getRoot(),
+                null, null, null, 2));
+
+        // leftchild - leftchild - root
+        treeobj.getRoot().getLeftChild().setLeftChild(((t23Tree) treeobj).create3NodeLeaf(10, 50, treeobj.getRoot().getLeftChild(), 0));
+        // middle - leftchild - root
+        treeobj.getRoot().getLeftChild().setMiddleChild(((t23Tree) treeobj).create3NodeLeaf(125, 130, treeobj.getRoot().getLeftChild(), 1));
+        // right - leftchild - root
+        treeobj.getRoot().getLeftChild().setRightChild(((t23Tree) treeobj).create3NodeLeaf(155, 160, treeobj.getRoot().getLeftChild(), 2));
+
+        // leftchild - middlechild - root
+        treeobj.getRoot().getMiddleChild().setLeftChild(((t23Tree) treeobj).create3NodeLeaf(230, 240, treeobj.getRoot().getMiddleChild(), 0));
+        // middlechild - middlechild - root
+        treeobj.getRoot().getMiddleChild().setMiddleChild(((t23Tree) treeobj).create3NodeLeaf(300, 320, treeobj.getRoot().getMiddleChild(), 1));
+        // rightchidl - middlechild - root
+        treeobj.getRoot().getMiddleChild().setRightChild(((t23Tree) treeobj).create3NodeLeaf(375, 385, treeobj.getRoot().getMiddleChild(), 2));
+
+        // left - rightchild  - root
+        treeobj.getRoot().getRightChild().setLeftChild(((t23Tree) treeobj).create3NodeLeaf(430, 450, treeobj.getRoot().getRightChild(), 0));
+        // middle - rightchild  - root
+        treeobj.getRoot().getRightChild().setMiddleChild(((t23Tree) treeobj).create3NodeLeaf(600, 700, treeobj.getRoot().getRightChild(), 1));
+        // right - rightchild  - root
+        treeobj.getRoot().getRightChild().setRightChild(((t23Tree) treeobj).create3NodeLeaf(900, 950, treeobj.getRoot().getRightChild(), 2));
+
+        return treeobj;
+    }
+
+
+    public static void t23outputTest(tree testAddtree) {
         System.out.print(testAddtree.getThreeNodeCounter());
         System.out.println(testAddtree.getAddInstructionCounter());
         System.out.println(testAddtree.getFindInstructionCounter());
@@ -9,7 +170,7 @@ public class testClass {
         testAddtree.preOrderTraverse(testAddtree.getRoot());
     }
 
-    private static void buildAsstree(tree testAddtree) {
+    public static void buildAsstree(tree testAddtree) {
         testAddtree.add(280, testAddtree.getRoot(), testAddtree);
         testAddtree.add(563, testAddtree.getRoot(), testAddtree);
         testAddtree.add(82, testAddtree.getRoot(), testAddtree);
@@ -140,7 +301,6 @@ public class testClass {
         return testTree;
 
     }
-
 
 
 }
