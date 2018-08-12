@@ -20,7 +20,9 @@ class TwoThree {
         testClass.orderTraversal(treeobj.getRoot());
         System.out.println();
 
-        treeobj.add(999, treeobj.getRoot(), treeobj);
+
+        treeobj.add(5, treeobj.getRoot(), treeobj);
+//        treeobj.add(999, treeobj.getRoot(), treeobj);
 //        treeobj.add(126, treeobj.getRoot(), treeobj);
         testClass.orderTraversal(treeobj.getRoot());
 

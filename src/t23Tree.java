@@ -1,5 +1,6 @@
 public class t23Tree extends tree {
 
+    private boolean middleThreeNodeSplit;
 
     @Override
     boolean add(int val, node rt, tree treeObj) {
@@ -158,7 +159,15 @@ public class t23Tree extends tree {
                 split_3NodeInternal(targetNode, treeObj);
 
                 if (targetNode.getParent() != null) {
-                    promote(targetNode.getParent(), treeObj);
+
+//                    promote(targetNode.getParent(), treeObj);
+
+                    // this if statement is for the middle 3-node internal splits - checked theoretically
+                    if (isMiddleThreeNodeSplit()) {
+                        promote(targetNode, treeObj);
+                    } else {
+                        promote(targetNode.getParent(), treeObj);
+                    }
 //                    promote(targetNode, treeObj);
                 }
             }
@@ -178,6 +187,7 @@ public class t23Tree extends tree {
         // insertkey < parentKey1
         // the insert key is on the left of 3-node parent key1
         if (targetNode.getParent().getKey1() > targetNode.getKey1()) {
+            setMiddleThreeNodeSplit(false);
             // creating 2x 2-nodes and setting their children
             tempNode1 = create2NodeInternal(
                     targetNode.getParent().getKey1(),
@@ -212,6 +222,7 @@ public class t23Tree extends tree {
         // the insert key at the middle of the 3-node parent key1 and key2
         else {
             if (targetNode.getParent().getKey2() > targetNode.getKey1()) {
+                setMiddleThreeNodeSplit(true);
                 tempNode1 = create2NodeInternal(targetNode.getParent().getKey1(),
                         targetNode,
                         targetNode.getParent().getLeftChild(),
@@ -250,6 +261,7 @@ public class t23Tree extends tree {
             // insertKey > parentKey2
             // the insert key is on the right of the 3-node parent key2
             else {
+                setMiddleThreeNodeSplit(false);
                 tempNode1 = create2NodeInternal(targetNode.getParent().getKey1(),
                         tempNode2,
                         targetNode.getParent().getLeftChild(),
@@ -480,6 +492,14 @@ public class t23Tree extends tree {
     node remove(int val) {
         removeInstructionCounterIncrement();
         return null;
+    }
+
+    public boolean isMiddleThreeNodeSplit() {
+        return middleThreeNodeSplit;
+    }
+
+    public void setMiddleThreeNodeSplit(boolean middleThreeNodeSplit) {
+        this.middleThreeNodeSplit = middleThreeNodeSplit;
     }
 
     @Override
